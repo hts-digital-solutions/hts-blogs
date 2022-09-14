@@ -1,0 +1,22 @@
+.logo__wrapper {
+  width: 200px;
+  transition: all 0.4s ease-in-out;
+}
+
+@media screen and (max-width: 1024px) {
+  .logo__wrapper {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .logo__wrapper {
+    width: 140px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo__wrapper {
+    width: 100px;
+  }
+}

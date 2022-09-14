@@ -1,0 +1,59 @@
+/*
+header css
+*/
+
+.header__wrapper {
+  background-color: var(--white);
+  padding: 1rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+}
+
+.header__sticky {
+  position: sticky;
+  top: 0;
+}
+
+.header__wrapper__left {
+  margin-right: 1rem;
+  transition: all 0.4s linear;
+}
+
+.header__wrapper__right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.4s linear;
+}
+
+.header__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 2rem;
+}
+
+.header__back {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--gray);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  transition: all 0.4s linear;
+}
+
+@media screen and (max-width: 768px) {
+  .header__wrapper {
+    padding: 1rem;
+  }
+  .header__wrapper__right {
+    flex-grow: initial;
+  }
+}
