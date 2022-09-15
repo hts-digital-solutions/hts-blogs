@@ -1,6 +1,5 @@
 import React from "react";
 import { useRouter } from "next/router";
-import useMobile from "../hooks/useMobile";
 
 import styles from "../styles/components/Header.module.css";
 import Button from "./Button";
@@ -9,15 +8,14 @@ import Navigation from "./Navigation";
 
 export default function Header() {
   const router = useRouter();
-  const { isMobile } = useMobile();
 
   return (
     <header
       className={`${styles.header__wrapper} ${
-        isMobile && styles.header__sticky
+        navigator.userAgent.includes("Mobile") && styles.header__sticky
       }`}
     >
-      {isMobile && router.pathname !== "/" && (
+      {navigator.userAgent.includes("Mobile") && router.pathname !== "/" && (
         <div className={styles.header__back} onClick={() => router.back()}>
           <i className="la la-arrow-left"></i>
         </div>

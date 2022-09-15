@@ -9,12 +9,14 @@ function Logo() {
   return (
     <div className={styles.logo__wrapper}>
       <Link href="/">
-        <Image
-          src={logo}
-          alt="logo__hts"
-          layout="responsive"
-          objectFit="contain"
-        />
+        <a>
+          <Image
+            src={logo}
+            alt="logo__hts"
+            layout="responsive"
+            objectFit="contain"
+          />
+        </a>
       </Link>
     </div>
   );

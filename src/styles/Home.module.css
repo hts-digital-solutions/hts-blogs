@@ -4,7 +4,7 @@
 }
 
 .home__trending_topics {
-  min-width: 200px;
+  max-width: 250px;
 }
 
 .home__main {
@@ -19,7 +19,7 @@
 }
 
 .home__most_used_tags {
-  min-width: 200px;
+  max-width: 300px;
 }
 
 .home__most_used_tags h2 {

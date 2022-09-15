@@ -11,6 +11,9 @@ const nextConfig = withPWA({
     skipWaiting: true,
     disable: process.env.NODE_ENV === "development",
   },
+  images: {
+    domains: ["images.unsplash.com"],
+  },
 });
 
 module.exports = nextConfig;

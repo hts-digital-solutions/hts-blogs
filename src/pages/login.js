@@ -4,7 +4,7 @@ import AppContainer from "../components/AppContainer";
 export default function Login() {
   return (
     <AppContainer>
-      <div>Login</div>;
+      <div>Login</div>
     </AppContainer>
   );
 }

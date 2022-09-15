@@ -1,6 +1,11 @@
+import dynamic from "next/dynamic";
 import React from "react";
 import Footer from "./Footer";
-import Header from "./Header";
+
+const Header = dynamic(() => import("./Header"), {
+  ssr: false,
+  loading: () => <HeaderLoader />,
+});
 
 export default function AppContainer({ children }) {
   return (
@@ -15,3 +20,9 @@ export default function AppContainer({ children }) {
     </React.Fragment>
   );
 }
+
+const HeaderLoader = () => {
+  return (
+    <div style={{ background: "var(--secondary-color)", height: "83px" }}></div>
+  );
+};
