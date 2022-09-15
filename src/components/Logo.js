@@ -8,7 +8,7 @@ import Link from "next/link";
 function Logo() {
   return (
     <div className={styles.logo__wrapper}>
-      <Link href="/home">
+      <Link href="/">
         <Image
           src={logo}
           alt="logo__hts"

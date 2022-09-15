@@ -12,6 +12,11 @@
   color: var(--white);
 }
 
+.light {
+  background-color: var(--white);
+  color: var(--secondary-color);
+}
+
 .secondary {
   background-color: var(--secondary-color);
   color: var(--white);

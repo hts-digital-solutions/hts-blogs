@@ -2,7 +2,7 @@
   "name": "HTSDS Blogs",
   "short_name": "HTSDS Blogs",
   "theme_color": "#ff9a33",
-  "background_color": "#ff9a33",
+  "background_color": "#ffffff",
   "display": "standalone",
   "orientation": "",
   "scope": "/",

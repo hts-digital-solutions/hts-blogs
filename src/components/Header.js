@@ -29,12 +29,7 @@ export default function Header() {
         <Navigation />
 
         <div className={styles.header__buttons}>
-          <Button
-            title="Login"
-            theme="secondary"
-            link="/login"
-            icon="la la-user"
-          />
+          <Button title="Login" theme="light" link="/login" icon="la la-user" />
           <Button
             title="Signup"
             theme="primary"

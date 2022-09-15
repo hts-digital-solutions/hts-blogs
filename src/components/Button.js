@@ -22,7 +22,9 @@ function Button({
             }}
             className={`${styles.button} ${
               icon ? styles.button__icon_res : ""
-            } ${theme === "primary" ? styles.primary : styles.secondary}`}
+            } ${theme === "primary" && styles.primary} ${
+              theme === "secondary" && styles.secondary
+            } ${theme === "light" && styles.light}`}
           >
             <span className={`${icon && styles.button__text}`}>{title}</span>
             {icon && (
@@ -40,7 +42,9 @@ function Button({
           onClick={onClick}
           className={`${styles.button}  ${
             icon ? styles.button__icon_res : ""
-          } ${theme === "primary" ? styles.primary : styles.secondary}`}
+          } ${theme === "primary" && styles.primary} ${
+            theme === "secondary" && styles.secondary
+          } ${theme === "light" && styles.light}`}
         >
           <span className={`${icon && styles.button__text}`}>{title}</span>
           {icon && (

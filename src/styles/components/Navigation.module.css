@@ -16,7 +16,7 @@
   transition: all 0.3s ease;
   cursor: pointer;
   text-decoration: none;
-  color: var(--black);
+  color: var(--white);
   display: flex;
   align-items: center;
   margin: 0 1rem;
@@ -33,7 +33,7 @@
 
 .navigation__menu li a.active,
 .navigation__menu li a:hover {
-  border-color: var(--secondary-color);
+  border-color: var(--primary-color);
 }
 
 @media screen and (max-width: 1024px) {
@@ -55,6 +55,7 @@
     font-size: 0.9rem;
     flex-direction: column;
     min-width: max-content;
+    color: var(--black);
   }
 
   .navigation__menu li a.active,
