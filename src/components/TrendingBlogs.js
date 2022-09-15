@@ -10,7 +10,7 @@ export default function TrendingBlogs({ trendingBlogs }) {
       {trendingBlogs.map((blog, index) => (
         <div className={styles.blog__item} key={index}>
           <div className={styles.blog__image}>
-            <Link href="/">
+            <Link href={blog.slug}>
               <a>
                 <Image
                   src={blog?.image}
@@ -44,7 +44,7 @@ export default function TrendingBlogs({ trendingBlogs }) {
                 <p>4 min read</p>
               </div>
             </div>
-            <Link href="/">
+            <Link href={blog.slug}>
               <a>
                 <h3 className="truncate-2">{blog?.title}</h3>
               </a>

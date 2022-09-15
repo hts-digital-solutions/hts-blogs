@@ -8,7 +8,7 @@ export default function BlogItem({ blog }) {
   return (
     <div className={styles.blogitem__container}>
       <div className={styles.blogitem__image}>
-        <Link href="/">
+        <Link href={blog.slug}>
           <a>
             <Image
               src={blog?.image}
@@ -43,7 +43,7 @@ export default function BlogItem({ blog }) {
           </div>
         </div>
         <div className={styles.blogitem__content}>
-          <Link href="/">
+          <Link href={blog.slug}>
             <a>
               <h4 className="truncate-2">{blog?.title}</h4>
             </a>
