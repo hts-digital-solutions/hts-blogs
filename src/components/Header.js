@@ -10,11 +10,7 @@ export default function Header() {
   const router = useRouter();
 
   return (
-    <header
-      className={`${styles.header__wrapper} ${
-        navigator.userAgent.includes("Mobile") && styles.header__sticky
-      }`}
-    >
+    <header className={`${styles.header__wrapper} ${styles.header__sticky}`}>
       {navigator.userAgent.includes("Mobile") && router.pathname !== "/" && (
         <div className={styles.header__back} onClick={() => router.back()}>
           <i className="la la-arrow-left"></i>

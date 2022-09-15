@@ -5,6 +5,10 @@
 
 .home__trending_topics {
   max-width: 250px;
+  display: block;
+  position: sticky;
+  top: 7rem;
+  height: max-content;
 }
 
 .home__main {
@@ -15,11 +19,15 @@
 }
 
 .home__trending_blogs {
-  padding-bottom: 2rem;
+  padding-bottom: 0rem;
 }
 
 .home__most_used_tags {
   max-width: 300px;
+  display: block;
+  position: sticky;
+  top: 7rem;
+  height: max-content;
 }
 
 .home__most_used_tags h2 {
@@ -29,6 +37,9 @@
 .home__blogs {
   padding: 2rem 0;
   border-top: 1px solid var(--gray);
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 1rem;
 }
 
 @media screen and (max-width: 1024px) {
@@ -54,6 +65,13 @@
   }
   .home__most_used_tags {
     max-width: 100%;
+  }
+  .home__most_used_tags {
+    position: inherit;
+  }
+
+  .home__blogs {
+    grid-template-columns: 100%;
   }
 }
 
