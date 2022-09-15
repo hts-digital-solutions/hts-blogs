@@ -1,5 +1,6 @@
 import Head from "next/head";
 import AppContainer from "../components/AppContainer";
+import DiscoverTags from "../components/DiscoverTags";
 import TrendingBlogs from "../components/TrendingBlogs";
 import TrendingTopics from "../components/TrendingTopics";
 
@@ -29,7 +30,9 @@ export default function Home() {
           <div className={styles.home__blogs}></div>
         </div>
         <div className={styles.home__most_used_tags}>
-          <h2>Discover what people love most</h2>
+          <h2>Discover what people love</h2>
+
+          <DiscoverTags />
         </div>
       </div>
     </AppContainer>

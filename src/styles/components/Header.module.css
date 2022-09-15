@@ -38,7 +38,7 @@ header css
 .header__back {
   width: 2.5rem;
   height: 2.5rem;
-  background-color: var(--gray);
+  background-color: var(--white);
   border-radius: 100%;
   display: flex;
   align-items: center;

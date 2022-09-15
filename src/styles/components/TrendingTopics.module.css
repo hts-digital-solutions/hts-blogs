@@ -1,5 +1,5 @@
 .topics__container {
-  padding: 1rem 0;
+  padding: 1rem 0.5rem 1rem 0;
   height: calc(100vh - 185px);
   overflow-y: auto;
   margin-top: 0.5rem;

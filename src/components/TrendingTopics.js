@@ -33,8 +33,8 @@ export default function TrendingTopics() {
             style={{ backgroundImage: `url(${topic.image})` }}
           ></div>
           <div className={styles.topics__info}>
-            <h3>{topic?.title}</h3>
-            <p>{topic?.description}</p>
+            <h3 className="truncate-2">{topic?.title}</h3>
+            <p className="truncate-2">{topic?.description}</p>
           </div>
         </div>
       ))}
