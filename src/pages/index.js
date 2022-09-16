@@ -6,6 +6,7 @@ import TrendingBlogs from "../components/TrendingBlogs";
 import TrendingTopics from "../components/TrendingTopics";
 
 import styles from "../styles/Home.module.css";
+import { _config } from "../utils/helper_functions";
 
 const blogs = [
   {
@@ -50,9 +51,9 @@ export default function Home() {
   return (
     <AppContainer>
       <Head>
-        <title>HTSDS Blogs</title>
+        <title>{_config("website-name")}</title>
       </Head>
-      <h1 hidden>HTSDS Blogs</h1>
+      <h1 hidden>{_config("website-name")}</h1>
 
       <div className={styles.home__container}>
         <div className={styles.home__trending_topics}>
