@@ -3,12 +3,14 @@ import React, { useState } from "react";
 import AppContainer from "../components/AppContainer";
 import { _config } from "../utils/helper_functions";
 
+import "hts-react-form/styles/default.css";
 import styles from "../styles/Login.module.css";
-import Form from "../components/Form";
+import btnStyles from "../styles/components/Button.module.css";
+import { HTSReactForm } from "hts-react-form";
 
 export default function Login() {
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const loginHandler = (e) => {
     e.preventDefault();
@@ -29,7 +31,7 @@ export default function Login() {
           <h1>Login</h1>
           <p>Start your journey with millions of thoughts.</p>
 
-          <Form
+          <HTSReactForm
             controls={[
               {
                 label: "Email",
@@ -37,6 +39,12 @@ export default function Login() {
                 name: "email",
                 value: email,
                 onChange: (e) => setEmail(e.target.value),
+                required: true,
+                validation: {
+                  pattern:
+                    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                  message: "Please enter a valid email.",
+                },
               },
               {
                 label: "Password",
@@ -44,11 +52,13 @@ export default function Login() {
                 name: "password",
                 value: password,
                 onChange: (e) => setPassword(e.target.value),
+                required: true,
               },
             ]}
             actionControl={{
               label: "Login",
               onSubmit: loginHandler,
+              className: `${btnStyles.button} ${btnStyles.primary}`,
             }}
             forgetPassword={{
               label: "Forgot Password?",

@@ -2347,6 +2347,11 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
+hts-react-form@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/hts-react-form/-/hts-react-form-0.0.8.tgz#7745078211bc5ff72cf76c9f64c6dc5be34ffe09"
+  integrity sha512-618q8IW6elAw38gkVt1egKu9gid+dbbZAophDHadp72Yy8vhtFmjVlS8ocTbNNQRDnKkhTj1F1WEEQYx3BBFQw==
+
 idb@^7.0.1:
   version "7.0.2"
   resolved "https://registry.yarnpkg.com/idb/-/idb-7.0.2.tgz#7a067e20dd16539938e456814b7d714ba8db3892"
