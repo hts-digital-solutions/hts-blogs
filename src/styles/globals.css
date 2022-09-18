@@ -70,3 +70,9 @@ body {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
+
+@media screen and (max-width: 480px) {
+  .htsform__container {
+    margin-top: 2rem !important;
+  }
+}

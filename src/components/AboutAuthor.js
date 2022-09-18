@@ -17,6 +17,15 @@ export default function AboutAuthor({ author }) {
       <div className={styles.about_author__info}>
         <h3>{author?.name}</h3>
         <p>{author?.about}</p>
+        <div className={styles.author__info}>
+          <div className={styles.author__social}>
+            <i className="la la-facebook"></i>
+            <i className="la la-twitter"></i>
+            <i className="la la-linkedin"></i>
+            <i className="la la-instagram"></i>
+            <i className="la la-github"></i>
+          </div>
+        </div>
       </div>
     </div>
   );

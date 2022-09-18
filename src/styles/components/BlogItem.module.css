@@ -64,4 +64,15 @@
 }
 
 @media screen and (max-width: 480px) {
+  .blogitem__author_info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .blogitem__author_info div:last-child {
+    margin-top: 0.2rem;
+  }
+  .blogitem__author_info div p:first-child {
+    margin: 0;
+    padding: 0;
+  }
 }

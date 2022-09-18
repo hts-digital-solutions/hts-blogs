@@ -30,30 +30,6 @@ export default function ViewBlog() {
       </Head>
       <div className={styles.blog__wrapper}>
         <div className={styles.blog__content}>
-          <div className={styles.blog__author}>
-            <Image
-              src="/assets/profile.jpeg"
-              width={50}
-              height={50}
-              objectFit="cover"
-              className={styles.author__image}
-            />
-            <div className={styles.author__info}>
-              <Link href="/">
-                <a>
-                  <h4>Tridev Sharma</h4>
-                </a>
-              </Link>
-              <div className={styles.author__social}>
-                <i className="la la-facebook"></i>
-                <i className="la la-twitter"></i>
-                <i className="la la-linkedin"></i>
-                <i className="la la-instagram"></i>
-                <i className="la la-github"></i>
-              </div>
-            </div>
-          </div>
-
           <div className={styles.blog__read_section}>
             <div className={styles.blog__image}>
               <NextImage
@@ -83,7 +59,7 @@ export default function ViewBlog() {
               </div>
             </div>
 
-            <div className={styles.blog__content}></div>
+            <div className={styles.blog__contentbox}></div>
           </div>
 
           <div className={styles.blog__tags}>
