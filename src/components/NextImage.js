@@ -9,5 +9,13 @@ export default function NextImage({ src, alt = "unknown" }) {
       setMeta({ width, height });
     });
   }, [src, meta]);
-  return <Image src={src} alt={alt} width={meta.width} height={meta.height} />;
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      width={meta.width}
+      height={meta.height}
+      style={{ borderRadius: "1rem" }}
+    />
+  );
 }

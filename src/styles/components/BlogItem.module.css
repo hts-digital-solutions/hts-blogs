@@ -1,9 +1,6 @@
 .blogitem__container {
   display: block;
   position: relative;
-}
-
-.blogitem__image {
   border-radius: 0.5rem;
   overflow: hidden;
 }

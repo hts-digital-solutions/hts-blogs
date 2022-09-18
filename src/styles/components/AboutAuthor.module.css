@@ -1,0 +1,29 @@
+.about_author__container {
+  display: flex;
+  margin-top: 1rem;
+  align-items: flex-start;
+}
+
+.about_author__info {
+  margin-left: 1rem;
+}
+
+.about_author__image {
+  border-radius: 10rem;
+  background-color: var(--gray);
+  overflow: hidden;
+}
+
+.about_author__info p {
+  padding: 0.5rem 0;
+}
+
+@media screen and (max-width: 480px) {
+  .about_author__container {
+    flex-direction: column;
+  }
+  .about_author__info {
+    margin-top: 1rem;
+    margin-left: 0;
+  }
+}

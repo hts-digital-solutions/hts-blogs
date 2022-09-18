@@ -42,6 +42,13 @@
   gap: 1rem;
 }
 
+.related__blogs {
+  padding: 1rem 0;
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
+  gap: 1rem;
+}
+
 @media screen and (max-width: 1024px) {
   .home__most_used_tags {
     max-width: 200px;
@@ -70,7 +77,8 @@
     position: inherit;
   }
 
-  .home__blogs {
+  .home__blogs,
+  .related__blogs {
     grid-template-columns: 100%;
   }
 }
