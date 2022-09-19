@@ -29,7 +29,7 @@ export default function Login() {
       <div className={styles.login__wrapper}>
         <div className={styles.login__form}>
           <h1>Login</h1>
-          <p>Start your journey with millions of thoughts.</p>
+          <p>Start your journey with million of thoughts.</p>
 
           <HTSReactForm
             controls={[

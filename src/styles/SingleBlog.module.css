@@ -93,6 +93,13 @@
   margin-left: 0;
 }
 
+.blog__rating {
+  padding: 1rem;
+  background-color: var(--lightgray);
+  border-radius: 1rem;
+  margin: 0rem 2rem 1rem 0;
+}
+
 .blog__sidebar {
   max-width: 300px;
   width: 100%;
@@ -132,7 +139,8 @@
   }
   .blog__author__details,
   .blog__related,
-  .blog__tags {
+  .blog__tags,
+  .blog__rating {
     margin-right: 0;
   }
 }

@@ -24,7 +24,7 @@ export default function Singup() {
         <title>Singup - {_config("website-name")}</title>
         <meta
           name="description"
-          content="Start your journey with millions of thoughts."
+          content="Start your journey with million of thoughts."
         />
       </Head>
 

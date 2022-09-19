@@ -5,6 +5,7 @@ import React from "react";
 import AboutAuthor from "../components/AboutAuthor";
 import AppContainer from "../components/AppContainer";
 import NextImage from "../components/NextImage";
+import OpinionBox from "../components/OpinionBox";
 import RelatedPosts from "../components/RelatedPosts";
 import TrendingTopics from "../components/TrendingTopics";
 
@@ -25,8 +26,14 @@ export default function ViewBlog() {
     <AppContainer>
       <Head>
         <title>
-          Memo To All Housekeeping, Kitchen, and Dining Room Staff At Mar-A-Lago
+          How we tripled max concurrent jobs to boost performance of GitHub
+          Actions
         </title>
+        <meta
+          name="description"
+          content="How we tripled max concurrent jobs to boost performance of
+                GitHub Actions"
+        />
       </Head>
       <div className={styles.blog__wrapper}>
         <div className={styles.blog__content}>
@@ -48,13 +55,7 @@ export default function ViewBlog() {
 
               <div className={styles.blog__share}>
                 <button data-color="blue">
-                  <i className="la la-facebook"></i>
-                </button>
-                <button>
-                  <i className="la la-twitter"></i>
-                </button>
-                <button>
-                  <i className="la la-whatsapp"></i>
+                  <i className="la la-share-square"></i>
                 </button>
               </div>
             </div>
@@ -73,6 +74,10 @@ export default function ViewBlog() {
           <div className={styles.blog__author__details}>
             <h2>About Author</h2>
             <AboutAuthor author={author} />
+          </div>
+          <div className={styles.blog__rating}>
+            <h2>Share your opinion</h2>
+            <OpinionBox />
           </div>
           <div className={styles.blog__related}>
             <h2>Related Posts</h2>
