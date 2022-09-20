@@ -1,6 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import AboutAuthor from "../components/AboutAuthor";
 import AppContainer from "../components/AppContainer";
@@ -27,11 +25,8 @@ export default function ViewBlog() {
     if (typeof window !== "undefined" && navigator?.canShare) {
       navigator?.share({
         url: _config("baseUrl") + "/sample-blog",
-        text: `The GitHub Actions team has done lots of work to improve the
-        performance and resource consumption of Actions on GHES in the
-        past year.`,
-        title: `How we tripled max concurrent jobs to boost performance of GitHub
-        Actions`,
+        text: `The GitHub Actions team has done lots of work to improve the performance and resource consumption of Actions on GHES in the past year.`,
+        title: `How we tripled max concurrent jobs to boost performance of GitHub Actions`,
       });
     }
   };
