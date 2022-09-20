@@ -1,3 +1,11 @@
 .opinion__container {
   margin: 0.5rem 0;
 }
+.opinion__rating p {
+  margin-bottom: 0.5rem;
+}
+
+.opinion__rating__star {
+  display: flex;
+  align-items: center;
+}

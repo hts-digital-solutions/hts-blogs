@@ -1,3 +1,4 @@
 {
-    "website-name" : "HTSDS Blogs"
+    "website-name" : "HTSDS Blogs",
+    "baseUrl" : "https://blogs.htsdigitalsolutions.com"
 }

@@ -22,9 +22,11 @@ function Button({
             }}
             className={`${styles.button} ${
               icon ? styles.button__icon_res : ""
-            } ${theme === "primary" && styles.primary} ${
-              theme === "secondary" && styles.secondary
-            } ${theme === "light" && styles.light}`}
+            } ${theme === "primary" ? styles.primary : ""} ${
+              theme === "secondary" ? styles.secondary : ""
+            } ${theme === "light" ? styles.light : ""} ${
+              theme === "primary-slim" ? styles.primary__slim : ""
+            } ${theme === "secondary-slim" ? styles.secondary__slim : ""}`}
           >
             <span className={`${icon && styles.button__text}`}>{title}</span>
             {icon && (
@@ -44,7 +46,9 @@ function Button({
             icon ? styles.button__icon_res : ""
           } ${theme === "primary" && styles.primary} ${
             theme === "secondary" && styles.secondary
-          } ${theme === "light" && styles.light}`}
+          } ${theme === "light" && styles.light} ${
+            theme === "primary-slim" ? styles.primary__slim : ""
+          } ${theme === "secondary-slim" ? styles.secondary__slim : ""}`}
         >
           <span className={`${icon && styles.button__text}`}>{title}</span>
           {icon && (

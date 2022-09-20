@@ -10,6 +10,7 @@ import RelatedPosts from "../components/RelatedPosts";
 import TrendingTopics from "../components/TrendingTopics";
 
 import styles from "../styles/SingleBlog.module.css";
+import { _config } from "../utils/helper_functions";
 
 const tags = ["Github", "npm", "Github Enterprise"];
 const author = {
@@ -22,6 +23,19 @@ const author = {
 };
 
 export default function ViewBlog() {
+  const shareIt = () => {
+    if (typeof window !== "undefined" && navigator?.canShare) {
+      navigator?.share({
+        url: _config("baseUrl") + "/sample-blog",
+        text: `The GitHub Actions team has done lots of work to improve the
+        performance and resource consumption of Actions on GHES in the
+        past year.`,
+        title: `How we tripled max concurrent jobs to boost performance of GitHub
+        Actions`,
+      });
+    }
+  };
+
   return (
     <AppContainer>
       <Head>
@@ -39,6 +53,10 @@ export default function ViewBlog() {
         <div className={styles.blog__content}>
           <div className={styles.blog__read_section}>
             <div className={styles.blog__image}>
+              <div className={styles.blog__avg_rating}>
+                <i className="la la-star"></i>
+                <span>4.5</span>
+              </div>
               <NextImage
                 src="https://images.unsplash.com/photo-1444676632488-26a136c45b9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aG91c2UlMjBrZWVwdGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
                 alt="blog"
@@ -54,7 +72,7 @@ export default function ViewBlog() {
               </p>
 
               <div className={styles.blog__share}>
-                <button data-color="blue">
+                <button data-color="blue" onClick={shareIt}>
                   <i className="la la-share-square"></i>
                 </button>
               </div>

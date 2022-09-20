@@ -8,6 +8,8 @@
 .blogitem__author_info {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .blogitem__author_info div {
@@ -16,12 +18,12 @@
 }
 
 .blogitem__author_info div p {
-  margin-left: 0.5rem;
   color: var(--gray);
 }
 
 .blogitem__author_info div p:last-child {
   color: var(--secondary-color);
+  margin-left: 0.5rem;
 }
 
 .blogitem__author_info div a {
