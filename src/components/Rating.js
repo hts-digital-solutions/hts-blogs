@@ -1,51 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import styles from "../styles/components/Rating.module.css";
 
-export default function Rating({ value, count = 5 }) {
+export default function Rating({
+  value,
+  onChange,
+  count = 5,
+  readOnly = false,
+}) {
   const [starValue, setStarValue] = useState(value);
 
-  useEffect(() => {
-    handleStarColor(starValue);
-    return () => {
-      setStarValue(0);
-    };
-  }, [value]);
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    const pos = e.target.getAttribute("data-pos");
-    setStarValue(pos);
-  };
-
-  const handleOver = (e) => {
-    e.preventDefault();
-    const pos = e.target.getAttribute("data-pos");
-    handleStarColor(pos);
-  };
-
-  const handleStarColor = (pos) => {
-    document.querySelectorAll("i").forEach((star) => {
-      if (star.getAttribute("data-pos") <= pos) {
-        star.parentElement.classList.add(styles.active);
-      } else {
-        star.parentElement.classList.remove(styles.active);
-      }
-    });
-  };
+  useEffect(() => {}, [starValue]);
 
   const renderStars = (length) => {
     const stars = [];
     for (let i = 1; i <= length; i++) {
       stars.push(
-        <button
+        <Star
           key={i}
-          onClick={handleClick}
-          onMouseOver={handleOver}
-          onMouseLeave={() => handleStarColor(starValue)}
-        >
-          <i className="la la-star" data-pos={i}></i>
-        </button>
+          onClick={onChange}
+          onHover={setStarValue}
+          onLeave={() => setStarValue(value)}
+          pos={i}
+          readOnly={readOnly}
+          className={starValue >= i ? styles.active : ""}
+        />
       );
     }
 
@@ -54,3 +33,16 @@ export default function Rating({ value, count = 5 }) {
 
   return <div className={styles.rating__container}>{renderStars(count)}</div>;
 }
+
+const Star = ({ className, onClick, onHover, onLeave, pos, readOnly }) => {
+  return (
+    <button
+      onClick={() => (!readOnly ? onClick(pos) : {})}
+      onMouseOver={() => (!readOnly ? onHover(pos) : {})}
+      onMouseLeave={() => (!readOnly ? onLeave() : {})}
+      className={className}
+    >
+      <i className="la la-star"></i>
+    </button>
+  );
+};

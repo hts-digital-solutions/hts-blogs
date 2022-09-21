@@ -32,3 +32,9 @@
   overflow-x: hidden;
   z-index: 9999;
 }
+
+@media screen and (max-width: 480px) {
+  .popup__box {
+    min-width: 95%;
+  }
+}

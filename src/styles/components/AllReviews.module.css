@@ -1,0 +1,29 @@
+.reviews__container {
+  padding: 1rem;
+}
+.reviews__title {
+  margin-bottom: 1rem;
+}
+.reviews_list {
+  display: flex;
+  flex-direction: column;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.reviews__item {
+  margin: 0.5rem 0;
+}
+
+.reviews__item_user {
+  display: flex;
+  align-items: center;
+}
+
+.reviews__item_userimage {
+  border-radius: 5rem;
+}
+
+.reviews__item_user_exp {
+  margin-left: 1rem;
+}

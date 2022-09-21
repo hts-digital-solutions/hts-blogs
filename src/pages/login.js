@@ -9,8 +9,15 @@ import btnStyles from "../styles/components/Button.module.css";
 import { HTSReactForm } from "hts-react-form";
 
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const setValue = (e) => {
+    const { name, value } = e.target;
+    setData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const loginHandler = (e) => {
     e.preventDefault();
@@ -37,8 +44,8 @@ export default function Login() {
                 label: "Email",
                 type: "text",
                 name: "email",
-                value: email,
-                onChange: (e) => setEmail(e.target.value),
+                value: data.email,
+                onChange: setValue,
                 required: true,
                 validation: {
                   pattern:
@@ -50,8 +57,8 @@ export default function Login() {
                 label: "Password",
                 type: "password",
                 name: "password",
-                value: password,
-                onChange: (e) => setPassword(e.target.value),
+                value: data.password,
+                onChange: setValue,
                 required: true,
               },
             ]}
