@@ -1,0 +1,39 @@
+.comments__container {
+  padding: 1rem;
+}
+.comments__title {
+  margin-bottom: 1rem;
+}
+.comments_list {
+  display: flex;
+  flex-direction: column;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.comments__item {
+  margin: 0.5rem 0;
+}
+
+.comments__item_user {
+  display: flex;
+  align-items: flex-start;
+}
+
+.comments__item_userimage {
+  border-radius: 5rem;
+}
+
+.comments__item_user_exp {
+  margin-left: 1rem;
+  flex: 1;
+}
+
+.comments__item_user_exp p {
+  margin-top: 0.2rem;
+}
+
+.comments__replies {
+  margin-top: 0.5rem;
+}

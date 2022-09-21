@@ -76,3 +76,7 @@ body {
     margin-top: 2rem !important;
   }
 }
+
+button {
+  outline: none;
+}

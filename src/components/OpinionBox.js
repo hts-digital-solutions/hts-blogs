@@ -1,26 +1,27 @@
-import { HTSReactForm } from "hts-react-form";
 import React, { useState } from "react";
 
 import styles from "../styles/components/OpinionBox.module.css";
+import AddComment from "./AddComment";
+import AllComments from "./AllComments";
 import AllReviews from "./AllReviews";
 import Button from "./Button";
 import Rating from "./Rating";
 
 export default function OpinionBox() {
   const [showAllReview, setShowAllReviews] = useState(false);
+  const [showAllComments, setShowAllComments] = useState(false);
   const [rating, setRating] = useState(0);
-  const [comment, setComment] = useState("");
 
   const setUserRating = (value) => {
     setRating(value);
   };
 
-  const setCommentValue = (e) => {
-    setComment(e.target.value);
+  const showReviews = () => {
+    setShowAllReviews(true);
   };
 
-  const onPostComment = (e) => {
-    e.preventDefault();
+  const showComments = () => {
+    setShowAllComments(true);
   };
 
   return (
@@ -30,36 +31,24 @@ export default function OpinionBox() {
         <div className={styles.opinion__rating__star}>
           <Rating value={rating} onChange={setUserRating} />
           <Button
-            onClick={() => setShowAllReviews(true)}
+            onClick={showReviews}
             title="View All Ratings"
             theme="secondary-slim"
             spacingX={1}
           />
-          {showAllReview && (
-            <AllReviews show={showAllReview} callback={setShowAllReviews} />
-          )}
+          <AllReviews show={showAllReview} callback={setShowAllReviews} />
         </div>
       </div>
       <div className={styles.opinion__comments}>
-        <p>Write a Comment</p>
-        <HTSReactForm
-          controls={[
-            {
-              type: "textarea",
-              name: "comment",
-              placeholder: "Share your comment...",
-              value: comment,
-              onChange: setCommentValue,
-              className: styles.opinion__comments__form__input,
-            },
-          ]}
-          actionControl={{
-            label: "Post",
-            onSubmit: onPostComment,
-            className: styles.opinion__comments__form__btn,
-          }}
-          className={styles.opinion__comments__form}
-        />
+        <div className={styles.opinion__comments__title}>
+          <p>Write a Comment</p>
+          <button onClick={showComments}>
+            20
+            <i className="la la-comment"></i>
+          </button>
+          <AllComments show={showAllComments} callback={setShowAllComments} />
+        </div>
+        <AddComment />
       </div>
     </div>
   );

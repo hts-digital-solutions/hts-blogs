@@ -26,4 +26,5 @@
 
 .reviews__item_user_exp {
   margin-left: 1rem;
+  flex: 1;
 }
