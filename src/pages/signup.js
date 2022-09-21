@@ -8,11 +8,20 @@ import styles from "../styles/Login.module.css";
 import btnStyles from "../styles/components/Button.module.css";
 import { HTSReactForm } from "hts-react-form";
 
+const initialState = {
+  name: "",
+  email: "",
+  password: "",
+  confirmPassword: "",
+};
+
 export default function Singup() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [data, setData] = useState(initialState);
+
+  const setValue = (e) => {
+    const { name, value } = e.target;
+    setData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const signupHandler = (e) => {
     e.preventDefault();
@@ -39,16 +48,16 @@ export default function Singup() {
                 label: "Full Name",
                 type: "text",
                 name: "name",
-                value: name,
-                onChange: (e) => setName(e.target.value),
+                value: data.name,
+                onChange: setValue,
                 required: true,
               },
               {
                 label: "Email",
                 type: "text",
                 name: "email",
-                value: email,
-                onChange: (e) => setEmail(e.target.value),
+                value: data.email,
+                onChange: setValue,
                 required: true,
                 validation: {
                   pattern:
@@ -60,16 +69,16 @@ export default function Singup() {
                 label: "Password",
                 type: "password",
                 name: "password",
-                value: password,
-                onChange: (e) => setPassword(e.target.value),
+                value: data.password,
+                onChange: setValue,
                 required: true,
               },
               {
                 label: "Confirm Password",
                 type: "password",
-                name: "cnf_password",
-                value: confirmPassword,
-                onChange: (e) => setConfirmPassword(e.target.value),
+                name: "confirmPassword",
+                value: data.confirmPassword,
+                onChange: setValue,
                 required: true,
               },
             ]}

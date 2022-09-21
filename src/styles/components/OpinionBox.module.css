@@ -9,3 +9,38 @@
   display: flex;
   align-items: center;
 }
+
+.opinion__comments {
+  margin-top: 1rem;
+}
+
+.opinion__comments__form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.opinion__comments__form__input {
+  border-radius: 1rem;
+  border: none;
+  padding: 1rem;
+  outline: none;
+  border: 1px solid var(--gray);
+  resize: vertical;
+  width: 100%;
+}
+
+.opinion__comments__form__btn {
+  padding: 0.8rem 1.2rem;
+  border-radius: 2rem;
+  border: none;
+  margin-top: 0.5rem;
+  background-color: var(--secondary-color);
+  cursor: pointer;
+  color: var(--white);
+  float: right;
+}
+
+.opinion__comments__form__btn:hover {
+  opacity: 0.7;
+}

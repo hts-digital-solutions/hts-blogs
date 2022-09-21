@@ -12,66 +12,16 @@ const reviews = [
     name: "Tridev Sharma",
     rating: 5,
   },
-  {
-    image:
-      "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-    name: "Keshav Sharma",
-    rating: 4,
-  },
-  {
-    image:
-      "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-    name: "Sanjiv Sharma",
-    rating: 4,
-  },
-  {
-    image:
-      "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-    name: "Mohan Sharma",
-    rating: 3,
-  },
-  {
-    image:
-      "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-    name: "Kunal Verma",
-    rating: 3,
-  },
-  {
-    image:
-      "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-    name: "Jitendra Sharma",
-    rating: 4,
-  },
-  {
-    image:
-      "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-    name: "Ramesh Sharma",
-    rating: 5,
-  },
-  {
-    image:
-      "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-    name: "Mukund Sharma",
-    rating: 5,
-  },
-  {
-    image:
-      "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-    name: "Naresh Sharma",
-    rating: 4,
-  },
-  {
-    image:
-      "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-    name: "Umesh Sharma",
-    rating: 2,
-  },
 ];
 
 export default function AllReviews({ show, callback }) {
+  const handleClose = () => {
+    callback(false);
+  };
+
   return (
     <React.Fragment>
-      <Popup show={show} onClose={() => callback(false)}>
+      <Popup show={show} onClose={handleClose}>
         <div className={styles.reviews__container}>
           <div className={styles.reviews__title}>
             <h3>All Ratings</h3>

@@ -25,14 +25,14 @@
 .secondary__slim {
   background-color: var(--secondary-color);
   color: var(--white);
-  padding: 0.5rem 0.8rem;
+  padding: 0.6rem 1rem;
   font-size: 0.7rem;
 }
 
 .primary__slim {
   background-color: var(--primary-color);
   color: var(--white);
-  padding: 0.5rem 0.8rem;
+  padding: 0.6rem 1rem;
   font-size: 0.7rem;
 }
 
