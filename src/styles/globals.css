@@ -71,6 +71,13 @@ body {
   margin-right: 0 !important;
 }
 
+.html_editor__box {
+  background-color: var(--lightgray);
+  min-height: 250px;
+  border-radius: 0.2rem;
+  padding: 0 1rem;
+}
+
 @media screen and (max-width: 480px) {
   .htsform__container {
     margin-top: 2rem !important;

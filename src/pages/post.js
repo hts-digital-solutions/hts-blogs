@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import React from "react";
 import AppContainer from "../components/AppContainer";
+import Button from "../components/Button";
 const HtmlEditor = dynamic(() => import("../components/HtmlEditor"), {
   ssr: false,
 });
@@ -35,6 +36,10 @@ export default function Post() {
 
           <div className={styles.post__input}>
             <HtmlEditor />
+          </div>
+
+          <div className={styles.post__input} style={{ textAlign: "right" }}>
+            <Button title="Post" theme="primary" />
           </div>
         </form>
       </div>

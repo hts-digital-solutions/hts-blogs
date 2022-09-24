@@ -3,8 +3,6 @@ import { EditorState } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
-import styles from "../styles/components/HtmlEditor.module.css";
-
 export default function HtmlEditor() {
   const [editorState, setEditorState] = React.useState(
     EditorState.createEmpty()
@@ -15,13 +13,11 @@ export default function HtmlEditor() {
   };
 
   return (
-    <div className={styles.html_editor__container}>
+    <div className="html_editor__container">
       <Editor
         editorState={editorState}
         onEditorStateChange={handleEditorStateChange}
-        wrapperClassName="wrapper-class"
-        editorClassName={styles.html_editor__box}
-        toolbarClassName="toolbar-class"
+        editorClassName="html_editor__box"
       />
     </div>
   );
