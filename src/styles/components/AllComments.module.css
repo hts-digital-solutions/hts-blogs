@@ -37,3 +37,7 @@
 .comments__replies {
   margin-top: 0.5rem;
 }
+
+.comments__replies button {
+  margin-right: 0.5rem;
+}

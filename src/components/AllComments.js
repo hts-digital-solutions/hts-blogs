@@ -68,7 +68,13 @@ const CommentItem = ({ comment }) => {
 
           <div className={styles.comments__replies}>
             <button onClick={toggleCommentBox}>
-              <i className="la la-reply"></i>
+              <i className="la la-reply"></i> 32
+            </button>
+            <button>
+              <i className="la la-thumbs-up"></i> 20
+            </button>
+            <button>
+              <i className="la la-thumbs-down"></i> 20
             </button>
           </div>
           {showCommentBox && <AddComment />}

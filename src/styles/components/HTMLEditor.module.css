@@ -1,0 +1,6 @@
+.html_editor__box {
+  background-color: var(--lightgray);
+  min-height: 5rem;
+  border: 1px solid var(--gray);
+  padding: 1rem;
+}

@@ -36,5 +36,11 @@
 @media screen and (max-width: 480px) {
   .popup__box {
     min-width: 95%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .popup__container {
+    align-items: flex-end;
   }
 }
