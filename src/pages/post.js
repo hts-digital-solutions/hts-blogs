@@ -39,6 +39,7 @@ export default function Post() {
           </div>
 
           <div className={styles.post__input} style={{ textAlign: "right" }}>
+            <Button title="Save Draft" theme="secondary" />
             <Button title="Post" theme="primary" />
           </div>
         </form>

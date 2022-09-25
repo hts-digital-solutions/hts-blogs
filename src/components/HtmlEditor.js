@@ -18,6 +18,17 @@ export default function HtmlEditor() {
         editorState={editorState}
         onEditorStateChange={handleEditorStateChange}
         editorClassName="html_editor__box"
+        toolbar={{
+          options: [
+            "inline",
+            "blockType",
+            "fontSize",
+            "list",
+            "textAlign",
+            "image",
+            "embedded",
+          ],
+        }}
       />
     </div>
   );

@@ -14,7 +14,7 @@
 
 .post__input .title {
   height: 4rem;
-  border: none;
+  border: 1px solid var(--gray);
   font-size: 2rem;
   width: 100%;
   outline: none;
@@ -28,7 +28,7 @@
 .post__input select {
   width: 100%;
   padding: 1rem;
-  border: none;
+  border: 1px solid var(--gray);
   outline: none;
   background: var(--lightgray);
   border-radius: 0.5rem;
