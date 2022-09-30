@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import { EditorState } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 export default function HtmlEditor() {
+  const editorRef = useRef();
   const [editorState, setEditorState] = React.useState(
     EditorState.createEmpty()
   );
@@ -12,10 +13,16 @@ export default function HtmlEditor() {
     setEditorState(state);
   };
 
+  const handleFocus = (e) => {
+    e.preventDefault();
+    editorRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className="html_editor__container">
+    <div className="html_editor__container" ref={editorRef}>
       <Editor
         editorState={editorState}
+        onFocus={handleFocus}
         onEditorStateChange={handleEditorStateChange}
         editorClassName="html_editor__box"
         toolbar={{

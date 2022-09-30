@@ -25,7 +25,8 @@
 
 .post__input input,
 .post__input textarea,
-.post__input select {
+.post__input select,
+.post__input_tags {
   width: 100%;
   padding: 1rem;
   border: 1px solid var(--gray);
@@ -33,6 +34,37 @@
   background: var(--lightgray);
   border-radius: 0.5rem;
   resize: vertical;
+}
+
+.post__input_tags {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.post_tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.post_tags p {
+  margin-right: 0.5rem;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  background-color: var(--gray);
+  margin-bottom: 0.2rem;
+}
+.post_tags p i {
+  cursor: pointer;
+  color: rgb(238, 52, 52);
+}
+
+.post__input_tags input {
+  border: none;
+  outline: none;
+  background-color: transparent;
 }
 
 @media screen and (max-width: 768px) {
