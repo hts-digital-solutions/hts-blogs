@@ -1,38 +1,33 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import React, { useRef, useState } from "react";
+import React, { useCallback, useState } from "react";
 import AppContainer from "../components/AppContainer";
 import Button from "../components/Button";
+import InputTagger from "../components/InputTagger";
 const HtmlEditor = dynamic(() => import("../components/HtmlEditor"), {
   ssr: false,
 });
 
 import styles from "../styles/Post.module.css";
 
+const initialState = {
+  title: "",
+  description: "",
+  topic: "",
+  content: "",
+  tags: ["3", "2"],
+};
+
 export default function Post() {
-  const [tags, setTags] = useState([]);
-  const [currentTag, setCurrentTag] = useState("");
+  const [post, setPost] = useState(initialState);
 
-  const handleCurrentTagChange = (e) => {
-    setCurrentTag(e.target.value);
-  };
+  const handleTags = useCallback((tags) => {
+    setPost((prev) => ({ ...prev, tags }));
+  }, []);
 
-  const handleTag = (e) => {
-    e.preventDefault();
-    if (e.code === "Comma" && e.target.value !== ",") {
-      setTags((prev) => [...prev, currentTag.replace(",", "")]);
-      setCurrentTag("");
-    }
-
-    if (e.code === "Backspace" && tags.length > 0 && e.target.value === "") {
-      setTags((prev) => prev.filter((_, index) => index !== prev.length - 1));
-    }
-  };
-
-  const handleRemove = (e) => {
-    e.preventDefault();
-    const _index = e.target.getAttribute("data-remove");
-    setTags((prev) => prev.filter((_, index) => index !== parseInt(_index)));
+  const handleValue = (e) => {
+    const { name, value } = e.target;
+    setPost((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
@@ -52,34 +47,28 @@ export default function Post() {
               type="text"
               name="title"
               placeholder="Post title"
+              value={post.title}
+              onChange={handleValue}
             />
           </div>
 
           <div className={styles.post__input}>
-            <textarea name="description" placeholder="About post"></textarea>
+            <textarea
+              name="description"
+              placeholder="About post"
+              value={post.description}
+              onChange={handleValue}
+            ></textarea>
           </div>
 
-          <div className={styles.post__input_tags}>
-            <div className={styles.post_tags}>
-              {tags?.map((tag, index) => (
-                <p key={index}>
-                  {tag}{" "}
-                  <i
-                    className="la la-times"
-                    data-remove={index}
-                    onClick={handleRemove}
-                  ></i>
-                </p>
-              ))}
-              <input
-                type="text"
-                placeholder="Tags"
-                value={currentTag}
-                onChange={handleCurrentTagChange}
-                onKeyUp={handleTag}
-              />
-            </div>
-          </div>
+          <InputTagger
+            value={post.tags}
+            onChange={handleTags}
+            styles={{
+              wrapper: styles.post__input_tags,
+              container: styles.post_tags,
+            }}
+          />
 
           <div className={styles.post__input}>
             <HtmlEditor />

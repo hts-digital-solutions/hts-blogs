@@ -3,7 +3,7 @@ import { EditorState } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
-export default function HtmlEditor() {
+function HtmlEditor() {
   const editorRef = useRef();
   const [editorState, setEditorState] = React.useState(
     EditorState.createEmpty()
@@ -40,3 +40,5 @@ export default function HtmlEditor() {
     </div>
   );
 }
+
+export default React.memo(HtmlEditor);

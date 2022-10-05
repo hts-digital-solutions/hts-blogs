@@ -46,6 +46,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  width: 100%;
 }
 
 .post_tags p {
@@ -64,6 +65,7 @@
 .post__input_tags input {
   border: none;
   outline: none;
+  flex: 1;
   background-color: transparent;
 }
 
