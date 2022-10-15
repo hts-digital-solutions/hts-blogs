@@ -9,12 +9,12 @@ function InputTagger({ styles, value = [], onChange }) {
 
   const handleTag = (e) => {
     e.preventDefault();
-    if (e.keyCode === 188 && e.target.value !== ",") {
+    if (e.which === 188 && e.target.value !== ",") {
       onChange([...value, currentTag.replace(",", "")]);
       setCurrentTag("");
     }
 
-    if (e.keyCode === 8 && value.length > 0 && e.target.value === "") {
+    if (e.which === 8 && value.length > 0 && e.target.value === "") {
       onChange(value.filter((_, index) => index !== value.length - 1));
     }
   };
@@ -24,6 +24,8 @@ function InputTagger({ styles, value = [], onChange }) {
     const _index = e.target.getAttribute("data-remove");
     onChange(value.filter((_, index) => index !== parseInt(_index)));
   };
+
+  console.log('tag');
 
   return (
     <div className={styles.wrapper}>

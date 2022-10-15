@@ -15,7 +15,7 @@ const initialState = {
   description: "",
   topic: "",
   content: "",
-  tags: ["3", "2"],
+  tags: [],
 };
 
 export default function Post() {

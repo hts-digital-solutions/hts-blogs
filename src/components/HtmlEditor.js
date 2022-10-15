@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { EditorState } from "draft-js";
+import { EditorState, convertToRaw } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
@@ -18,12 +18,18 @@ function HtmlEditor() {
     editorRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleContent = (contentState) => {
+    const rawState = convertToRaw(contentState)
+
+  }
+
   return (
     <div className="html_editor__container" ref={editorRef}>
       <Editor
         editorState={editorState}
         onFocus={handleFocus}
         onEditorStateChange={handleEditorStateChange}
+        onChange={handleContent}
         editorClassName="html_editor__box"
         toolbar={{
           options: [
