@@ -1,10 +1,17 @@
-import React from "react";
 import AppContainer from "../components/AppContainer";
 
-export default function OurStory() {
+function OurStory() {
+  return (
+    <>
+      <div>OurStory</div>
+    </>
+  );
+}
+
+export default function OurStoryPage() {
   return (
     <AppContainer>
-      <div>OurStory</div>
+      <OurStory />
     </AppContainer>
-  );
+  )
 }

@@ -20,7 +20,7 @@ const author = {
   year.`,
 };
 
-export default function ViewBlog() {
+function ViewBlog() {
   const shareIt = () => {
     if (typeof window !== "undefined" && navigator?.canShare) {
       navigator?.share({
@@ -32,7 +32,7 @@ export default function ViewBlog() {
   };
 
   return (
-    <AppContainer>
+    <React.Fragment>
       <Head>
         <title>
           How we tripled max concurrent jobs to boost performance of GitHub
@@ -102,6 +102,14 @@ export default function ViewBlog() {
           <TrendingTopics />
         </div>
       </div>
-    </AppContainer>
+    </React.Fragment>
   );
+}
+
+export default function ViewBlogPage() {
+  return (
+    <AppContainer>
+      <ViewBlog />
+    </AppContainer>
+  )
 }

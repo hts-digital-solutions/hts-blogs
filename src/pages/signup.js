@@ -15,7 +15,7 @@ const initialState = {
   confirmPassword: "",
 };
 
-export default function Singup() {
+function Singup() {
   const [data, setData] = useState(initialState);
 
   const setValue = (e) => {
@@ -28,7 +28,7 @@ export default function Singup() {
   };
 
   return (
-    <AppContainer>
+    <>
       <Head>
         <title>Singup - {_config("website-name")}</title>
         <meta
@@ -89,19 +89,27 @@ export default function Singup() {
             }}
             googleLogin={{
               label: <i className="la la-google-plus"></i>,
-              onClick: () => {},
+              onClick: () => { },
             }}
             facebookLogin={{
               label: <i className="lab la-facebook"></i>,
-              onClick: () => {},
+              onClick: () => { },
             }}
             githubLogin={{
               label: <i className="la la-github"></i>,
-              onClick: () => {},
+              onClick: () => { },
             }}
           />
         </div>
       </div>
-    </AppContainer>
+    </>
   );
+}
+
+export default function SingupPage() {
+  return (
+    <AppContainer>
+      <Singup />
+    </AppContainer>
+  )
 }

@@ -1,10 +1,18 @@
 import React from "react";
 import AppContainer from "../components/AppContainer";
 
-export default function Explore() {
+function Explore() {
+  return (
+    <React.Fragment>
+      <div>Explore</div>
+    </React.Fragment>
+  );
+}
+
+export default function ExplorePage() {
   return (
     <AppContainer>
-      <div>Explore</div>
+      <Explore />
     </AppContainer>
-  );
+  )
 }

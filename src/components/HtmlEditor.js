@@ -20,8 +20,6 @@ function HtmlEditor({ onChange }) {
     editorRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  console.log('hb');
-
   return (
     <div className="html_editor__container" ref={editorRef}>
       <Editor

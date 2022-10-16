@@ -47,9 +47,9 @@ const blogs = [
   },
 ];
 
-export default function Home() {
+function Home() {
   return (
-    <AppContainer>
+    <>
       <Head>
         <title>{_config("website-name")}</title>
       </Head>
@@ -80,6 +80,14 @@ export default function Home() {
           <DiscoverTags />
         </div>
       </div>
-    </AppContainer>
+    </>
   );
+}
+
+export default function HomePage() {
+  return (
+    <AppContainer>
+      <Home />
+    </AppContainer>
+  )
 }

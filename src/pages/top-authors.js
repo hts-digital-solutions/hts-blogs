@@ -1,10 +1,17 @@
-import React from "react";
 import AppContainer from "../components/AppContainer";
 
-export default function TopAuthors() {
+function TopAuthors() {
+  return (
+    <>
+      <div>TopAuthors</div>
+    </>
+  );
+}
+
+export default function TopAuthorsPage() {
   return (
     <AppContainer>
-      <div>TopAuthors</div>
+      <TopAuthors />
     </AppContainer>
-  );
+  )
 }

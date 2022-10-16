@@ -1,5 +1,6 @@
 .post__container {
   padding: 2rem 4rem;
+  padding-bottom: 4rem;
 }
 
 .post__form {
@@ -38,6 +39,7 @@
 @media screen and (max-width: 768px) {
   .post__container {
     padding: 1rem;
+    padding-bottom: 10rem;
   }
 
   .post__input .title {

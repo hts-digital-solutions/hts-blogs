@@ -18,7 +18,7 @@ export default function AppContainer({ children }) {
 
       {/* footer */}
       <Footer />
-      <Alert type="processing" />
+      <Alert />
     </React.Fragment>
   );
 }

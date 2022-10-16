@@ -7,8 +7,10 @@ import InputTagger from "../components/InputTagger";
 const HtmlEditor = dynamic(() => import("../components/HtmlEditor"), {
   ssr: false,
 });
+import { useDispatch } from "react-redux"
 
 import styles from "../styles/Post.module.css";
+import { setAlertInfo } from "../store/slices/EnvironmentSlice";
 
 const initialState = {
   title: "",
@@ -18,8 +20,9 @@ const initialState = {
   tags: [],
 };
 
-export default function Post() {
+function Post() {
   const [post, setPost] = useState(initialState);
+  const dispatch = useDispatch()
 
   const handleTags = useCallback((tags) => {
     setPost((prev) => ({ ...prev, tags }));
@@ -34,8 +37,32 @@ export default function Post() {
     setPost(prev => ({ ...prev, content: value }))
   }, [])
 
+  const handlePost = (e) => {
+    e.preventDefault()
+
+    dispatch(setAlertInfo({
+      data: {
+        type: 'processing'
+      }
+    }))
+
+    setTimeout(() => {
+      dispatch(setAlertInfo({
+        data: {
+          type: 'success',
+          message: 'Congratulations! You have just posted your first post.',
+          icon: 'la la-check'
+        }
+      }))
+    }, 2000)
+  }
+
+  const handleDraft = (e) => {
+    e.preventDefault()
+  }
+
   return (
-    <AppContainer>
+    <React.Fragment>
       <Head>
         <title>Share your thoughts, knowledge...</title>
       </Head>
@@ -75,11 +102,19 @@ export default function Post() {
           </div>
 
           <div className={styles.post__input} style={{ textAlign: "right" }}>
-            <Button title="Save Draft" theme="secondary" />
-            <Button title="Post" theme="primary" />
+            <Button title="Save Draft" theme="secondary" onClick={handleDraft} />
+            <Button title="Post" theme="primary" onClick={handlePost} />
           </div>
         </form>
       </div>
-    </AppContainer>
+    </React.Fragment>
   );
+}
+
+export default function PostPage() {
+  return (
+    <AppContainer>
+      <Post />
+    </AppContainer>
+  )
 }

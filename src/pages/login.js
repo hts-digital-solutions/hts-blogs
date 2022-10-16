@@ -8,7 +8,7 @@ import styles from "../styles/Login.module.css";
 import btnStyles from "../styles/components/Button.module.css";
 import { HTSReactForm } from "hts-react-form";
 
-export default function Login() {
+function Login() {
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -24,7 +24,7 @@ export default function Login() {
   };
 
   return (
-    <AppContainer>
+    <>
       <Head>
         <title>Login - {_config("website-name")}</title>
         <meta
@@ -69,23 +69,31 @@ export default function Login() {
             }}
             forgetPassword={{
               label: "Forgot Password?",
-              onClick: () => {},
+              onClick: () => { },
             }}
             googleLogin={{
               label: <i className="la la-google-plus"></i>,
-              onClick: () => {},
+              onClick: () => { },
             }}
             facebookLogin={{
               label: <i className="lab la-facebook"></i>,
-              onClick: () => {},
+              onClick: () => { },
             }}
             githubLogin={{
               label: <i className="la la-github"></i>,
-              onClick: () => {},
+              onClick: () => { },
             }}
           />
         </div>
       </div>
-    </AppContainer>
+    </>
   );
+}
+
+export default function LoginPage() {
+  return (
+    <AppContainer>
+      <Login />
+    </AppContainer>
+  )
 }
