@@ -30,6 +30,10 @@ export default function Post() {
     setPost((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleContent = useCallback(value => {
+    setPost(prev => ({ ...prev, content: value }))
+  }, [])
+
   return (
     <AppContainer>
       <Head>
@@ -64,14 +68,10 @@ export default function Post() {
           <InputTagger
             value={post.tags}
             onChange={handleTags}
-            styles={{
-              wrapper: styles.post__input_tags,
-              container: styles.post_tags,
-            }}
           />
 
           <div className={styles.post__input}>
-            <HtmlEditor />
+            <HtmlEditor onChange={handleContent} />
           </div>
 
           <div className={styles.post__input} style={{ textAlign: "right" }}>

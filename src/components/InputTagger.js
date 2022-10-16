@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
-function InputTagger({ styles, value = [], onChange }) {
+import styles from "../styles/components/InputTagger.module.css"
+
+function InputTagger({ value = [], onChange }) {
   const [currentTag, setCurrentTag] = useState("");
 
   const handleCurrentTagChange = (e) => {
@@ -28,8 +30,8 @@ function InputTagger({ styles, value = [], onChange }) {
   console.log('tag');
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.container}>
+    <div className={styles?.post__input_tags}>
+      <div className={styles?.post_tags}>
         {value?.map((tag, index) => (
           <p key={index}>
             {tag}{" "}

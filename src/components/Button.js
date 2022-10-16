@@ -10,7 +10,7 @@ function Button({
   icon = "",
   spacingX = 0.2,
   spacingY = 0.2,
-  onClick = () => {},
+  onClick = () => { },
 }) {
   return (
     <React.Fragment>
@@ -20,13 +20,10 @@ function Button({
             style={{
               margin: `${spacingY}rem ${spacingX}rem`,
             }}
-            className={`${styles.button} ${
-              icon ? styles.button__icon_res : ""
-            } ${theme === "primary" ? styles.primary : ""} ${
-              theme === "secondary" ? styles.secondary : ""
-            } ${theme === "light" ? styles.light : ""} ${
-              theme === "primary-slim" ? styles.primary__slim : ""
-            } ${theme === "secondary-slim" ? styles.secondary__slim : ""}`}
+            className={`${styles.button} ${icon ? styles.button__icon_res : ""
+              } ${theme === "primary" ? styles.primary : ""} ${theme === "secondary" ? styles.secondary : ""
+              } ${theme === "light" ? styles.light : ""} ${theme === "primary-slim" ? styles.primary__slim : ""
+              } ${theme === "secondary-slim" ? styles.secondary__slim : ""}`}
           >
             <span className={`${icon && styles.button__text}`}>{title}</span>
             {icon && (
@@ -42,13 +39,10 @@ function Button({
             margin: `${spacingY}rem ${spacingX}rem`,
           }}
           onClick={onClick}
-          className={`${styles.button}  ${
-            icon ? styles.button__icon_res : ""
-          } ${theme === "primary" && styles.primary} ${
-            theme === "secondary" && styles.secondary
-          } ${theme === "light" && styles.light} ${
-            theme === "primary-slim" ? styles.primary__slim : ""
-          } ${theme === "secondary-slim" ? styles.secondary__slim : ""}`}
+          className={`${styles.button}  ${icon ? styles.button__icon_res : ""
+            } ${theme === "primary" && styles.primary} ${theme === "secondary" && styles.secondary
+            } ${theme === "light" && styles.light} ${theme === "primary-slim" ? styles.primary__slim : ""
+            } ${theme === "secondary-slim" ? styles.secondary__slim : ""}`}
         >
           <span className={`${icon && styles.button__text}`}>{title}</span>
           {icon && (

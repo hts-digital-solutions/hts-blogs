@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import React from "react";
+import Alert from "./Alert";
 import Footer from "./Footer";
 
 const Header = dynamic(() => import("./Header"), {
@@ -17,6 +18,7 @@ export default function AppContainer({ children }) {
 
       {/* footer */}
       <Footer />
+      <Alert type="processing" />
     </React.Fragment>
   );
 }
