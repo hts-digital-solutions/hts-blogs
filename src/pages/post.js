@@ -11,17 +11,20 @@ import { useDispatch } from "react-redux"
 
 import styles from "../styles/Post.module.css";
 import { setAlertInfo } from "../store/slices/EnvironmentSlice";
+import Popup from "../components/Popup";
+import TopicSelector from "../components/TopicSelector";
 
 const initialState = {
   title: "",
   description: "",
-  topic: "",
   content: "",
   tags: [],
+  topicId: null
 };
 
 function Post() {
   const [post, setPost] = useState(initialState);
+  const [topicSelector, setTopicSelector] = useState(false)
   const dispatch = useDispatch()
 
   const handleTags = useCallback((tags) => {
@@ -37,9 +40,17 @@ function Post() {
     setPost(prev => ({ ...prev, content: value }))
   }, [])
 
-  const handlePost = (e) => {
-    e.preventDefault()
+  const handlePopupClose = () => {
+    setTopicSelector(false)
+  }
 
+  const handlePostAction = e => {
+    e.preventDefault();
+    setTopicSelector(true)
+  }
+
+  const handlePost = (id) => {
+    setTopicSelector(false)
     dispatch(setAlertInfo({
       data: {
         type: 'processing'
@@ -58,7 +69,8 @@ function Post() {
   }
 
   const handleDraft = (e) => {
-    e.preventDefault()
+    e.preventDefault();
+    setTopicSelector(true)
   }
 
   return (
@@ -103,9 +115,14 @@ function Post() {
 
           <div className={styles.post__input} style={{ textAlign: "right" }}>
             <Button title="Save Draft" theme="secondary" onClick={handleDraft} />
-            <Button title="Post" theme="primary" onClick={handlePost} />
+            <Button title="Post" theme="primary" onClick={handlePostAction} />
           </div>
         </form>
+
+        <Popup show={topicSelector} onClose={handlePopupClose}>
+          <TopicSelector title="Select a topic to post in" onPostIn={handlePost} />
+        </Popup>
+
       </div>
     </React.Fragment>
   );
