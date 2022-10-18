@@ -6,7 +6,6 @@
 
 .topic__container h2 {
     padding: 0 1rem;
-    background-color: var(--white);
 }
 
 .topic__list {
@@ -41,6 +40,7 @@
     width: 10rem;
     height: 10rem;
     overflow: hidden;
+    background-color: var(--gray);
 }
 
 .topic__list_item h4 {
@@ -53,6 +53,16 @@
 @media screen and (max-width: 480px) {
     .topic__list_item {
         margin: .5rem;
+    }
+
+    .topic__list_item_image {
+        width: 9rem;
+        height: 9rem;
+    }
+
+    .topic__list_item h4 {
+        width: 9rem;
+        font-size: 1rem;
     }
 
     .topic__list {

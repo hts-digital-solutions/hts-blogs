@@ -1,6 +1,8 @@
 .popup__container {
   position: fixed;
   display: flex;
+  visibility: hidden;
+  opacity: 0;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -9,6 +11,12 @@
   top: 0;
   left: 0;
   overflow: hidden;
+  transition: all .1s ease;
+}
+
+.popup__container.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 .popup__overlay {
@@ -31,6 +39,12 @@
   overflow-y: auto;
   overflow-x: hidden;
   z-index: 9999;
+  transform: translateY(10rem);
+  transition: all .4s ease;
+}
+
+.show .popup__box {
+  transform: translateY(0);
 }
 
 @media screen and (max-width: 480px) {
