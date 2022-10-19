@@ -3,15 +3,21 @@ import "../styles/globals.css";
 
 import { Provider } from "react-redux"
 import store from "../store";
+import { useAmp } from "next/amp";
 
 function MyApp({ Component, pageProps }) {
+  const isAmp = useAmp()
+
   return (
     <>
       <Head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, user-scalable=no"
-        />
+        {!isAmp &&
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=no"
+          />
+        }
+
         <link
           rel="apple-touch-icon"
           sizes="180x180"

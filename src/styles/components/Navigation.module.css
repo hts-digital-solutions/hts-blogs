@@ -51,6 +51,7 @@
     overflow-y: hidden;
     flex-wrap: nowrap;
   }
+
   .navigation__menu li a {
     font-size: 0.9rem;
     flex-direction: column;
@@ -71,8 +72,11 @@
   }
 }
 
-@media screen and (max-width: 768px) {
-}
+@media screen and (max-width: 768px) {}
 
 @media screen and (max-width: 480px) {
+
+  .navigation__menu li a {
+    margin: 0 .5rem;
+  }
 }

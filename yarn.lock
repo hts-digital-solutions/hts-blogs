@@ -3182,11 +3182,6 @@ react-draft-wysiwyg@^1.15.0:
     linkify-it "^2.2.0"
     prop-types "^15.7.2"
 
-react-google-stories@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/react-google-stories/-/react-google-stories-1.0.4.tgz#397fbab1f6e5a9c6986ed41f6fcbca19f88a546e"
-  integrity sha512-j4sAAfIy1XsXbRXAjjj6dVfM0mWaihj99NM6oPIzCcjGvY1jiTl1xlu+IhRop3lnfOwLuXhpoSC1SbifJeQvoQ==
-
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
