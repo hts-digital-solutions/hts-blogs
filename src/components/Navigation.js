@@ -32,16 +32,7 @@ function Navigation() {
             </a>
           </Link>
         </li>
-        <li>
-          <Link href="/stories">
-            <a className={router.pathname === "/stories" ? styles.active : ""}>
-              <span className={styles.navigation__menu__icon}>
-                <i className="la la-video"></i>
-              </span>
-              Stories
-            </a>
-          </Link>
-        </li>
+
         <li>
           <Link href="/post">
             <a className={router.pathname === "/post" ? styles.active : ""}>

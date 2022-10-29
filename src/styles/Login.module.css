@@ -22,11 +22,13 @@
   .login__wrapper {
     align-items: flex-start;
   }
+
   .login__form {
     margin-top: 25%;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
   }
+
   .login__form h1 {
     font-size: 1.5rem;
   }

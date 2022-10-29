@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-    alertInfo: null
+    alertInfo: null,
+    sidebarVisible: true
 }
 
 const EnvironmentSlice = createSlice({
@@ -13,12 +14,16 @@ const EnvironmentSlice = createSlice({
         },
         clearAlertInfo(state) {
             state.alertInfo = null
+        },
+        toggleSidebar(state) {
+            state.sidebarVisible = !state.sidebarVisible
         }
     }
 })
 
-export const { setAlertInfo, clearAlertInfo } = EnvironmentSlice.actions
+export const { setAlertInfo, clearAlertInfo, toggleSidebar } = EnvironmentSlice.actions
 
 export const getAlertInfo = state => state.environment.alertInfo
+export const isSidebarVisible = state => state.environment.sidebarVisible
 
 export default EnvironmentSlice.reducer

@@ -49,11 +49,33 @@ header css
   transition: all 0.4s linear;
 }
 
+.header__user {
+  border: none;
+  background: var(--white);
+  border-radius: 5rem;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.header__user:hover {
+  opacity: .9;
+}
+
 @media screen and (max-width: 768px) {
   .header__wrapper {
     padding: 1rem;
   }
+
   .header__wrapper__right {
     flex-grow: initial;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header__user {
+    width: 2rem;
+    height: 2rem;
   }
 }

@@ -1,6 +1,3 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css");
-@import url("https://fonts.googleapis.com/css?family=Karla:400,700&display=swap");
-
 body {
   font-family: "Karla", sans-serif;
 }
@@ -19,9 +16,13 @@ body {
   --white: #fff;
   --black: #000;
   --gray: #eee;
-  --lightgray: rgb(250, 250, 250);
+  --lightgray: rgb(255, 255, 255);
   --title-size: 3rem;
   --subtitle-size: 1.2rem;
+}
+
+body {
+  background-color: var(--white);
 }
 
 /* width */
