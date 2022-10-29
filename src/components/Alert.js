@@ -18,7 +18,7 @@ export default function Alert() {
     return () => {
       clearTimeout(timeout)
     }
-  }, [alert])
+  }, [alert, dispatch])
 
   return (
     <div className={`${styles.alert__container} ${alert ? styles.show : ''}`}>

@@ -5,6 +5,7 @@ export default function Stories() {
     return (
         <>
             <Script
+                id='amp-script'
                 type='application/json'
                 onLoad={{
                     "controls": [

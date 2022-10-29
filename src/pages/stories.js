@@ -15,7 +15,7 @@ function WebStories() {
             <Script src='https://cdn.ampproject.org/v0/amp-consent-0.1.js' custom-element="amp-consent" async />
             <Script src='https://cdn.ampproject.org/v0/amp-video-0.1.js' custom-element="amp-video" async />
             <Script src='https://cdn.ampproject.org/v0/amp-story-1.0.js' custom-element="amp-story" async />
-            <Script type='application/json' dangerouslySetInnerHTML={{
+            <Script id='amp-script' type='application/json' dangerouslySetInnerHTML={{
                 __html: JSON.stringify({
                     "controls": [
                         {

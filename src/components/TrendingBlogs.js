@@ -30,6 +30,7 @@ export default function TrendingBlogs({ trendingBlogs }) {
                   src="/assets/profile.jpeg"
                   width={22}
                   height={22}
+                  alt='profile'
                   objectFit="cover"
                   className={styles.author__image}
                 />

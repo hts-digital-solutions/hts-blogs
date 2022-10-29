@@ -28,6 +28,7 @@ export default function BlogItem({ blog }) {
               src="/assets/profile.jpeg"
               width={22}
               height={22}
+              alt='blogitem'
               objectFit="cover"
               className={styles.author__image}
             />
