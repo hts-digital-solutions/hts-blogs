@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
     alertInfo: null,
-    sidebarVisible: true
+    sidebarVisible: false
 }
 
 const EnvironmentSlice = createSlice({
@@ -15,8 +15,8 @@ const EnvironmentSlice = createSlice({
         clearAlertInfo(state) {
             state.alertInfo = null
         },
-        toggleSidebar(state) {
-            state.sidebarVisible = !state.sidebarVisible
+        toggleSidebar(state, action) {
+            state.sidebarVisible = action?.payload?.state === 'close' ? false : !state.sidebarVisible
         }
     }
 })

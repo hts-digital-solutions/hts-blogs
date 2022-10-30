@@ -29,7 +29,7 @@ const topics = [
 ]
 
 export default function TopicSelector({ title = '', onPostIn }) {
-    console.log('topic');
+
     const [selected, setSelected] = useState(0)
     const dispatch = useDispatch()
 
