@@ -6,6 +6,11 @@
   cursor: pointer;
 }
 
+.topics__container a {
+  text-decoration: none;
+  color: var(--black);
+}
+
 .topics__item {
   margin-bottom: 1rem;
 }

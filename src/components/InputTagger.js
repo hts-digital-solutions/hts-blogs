@@ -11,12 +11,12 @@ function InputTagger({ value = [], onChange }) {
 
   const handleTag = (e) => {
     e.preventDefault();
-    if (e.which === 188 && e.target.value !== ",") {
+    if (/(,)/.test(e.key) && e.target.value !== ",") {
       onChange([...value, currentTag.replace(",", "")]);
       setCurrentTag("");
     }
 
-    if (e.which === 8 && value.length > 0 && e.target.value === "") {
+    if (/(Backspace)/.test(e.key) && value.length > 0 && e.target.value === "") {
       onChange(value.filter((_, index) => index !== value.length - 1));
     }
   };

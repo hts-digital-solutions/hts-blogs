@@ -12,7 +12,7 @@ const nextConfig = withPWA({
     disable: process.env.NODE_ENV === "development",
   },
   images: {
-    domains: ["images.unsplash.com"],
+    domains: ["images.unsplash.com", "source.unsplash.com"],
   },
 });
 

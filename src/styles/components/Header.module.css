@@ -75,7 +75,7 @@ header css
 
 @media screen and (max-width: 480px) {
   .header__user {
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 }

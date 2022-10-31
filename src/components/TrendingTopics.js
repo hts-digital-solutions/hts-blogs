@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 import styles from "../styles/components/TrendingTopics.module.css";
@@ -27,16 +28,20 @@ export default function TrendingTopics() {
   return (
     <div className={styles.topics__container}>
       {topics.map((topic, index) => (
-        <div className={styles.topics__item} key={index}>
-          <div
-            className={styles.topics__image}
-            style={{ backgroundImage: `url(${topic.image})` }}
-          ></div>
-          <div className={styles.topics__info}>
-            <h3 className="truncate-2">{topic?.title}</h3>
-            <p className="truncate-2">{topic?.description}</p>
-          </div>
-        </div>
+        <Link href={`topic/${topic?.title.toLowerCase().replace(" ", "-")}`} key={index}>
+          <a >
+            <div className={styles.topics__item}>
+              <div
+                className={styles.topics__image}
+                style={{ backgroundImage: `url(${topic.image})` }}
+              ></div>
+              <div className={styles.topics__info}>
+                <h3 className="truncate-2">{topic?.title}</h3>
+                <p className="truncate-2">{topic?.description}</p>
+              </div>
+            </div>
+          </a>
+        </Link>
       ))}
     </div>
   );

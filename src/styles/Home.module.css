@@ -94,7 +94,9 @@
 }
 
 @media screen and (max-width: 480px) {
-  .home__trending_blogs h2 {
+
+  .home__trending_blogs h2,
+  .story_page h1 {
     font-size: 1.3rem;
   }
 
