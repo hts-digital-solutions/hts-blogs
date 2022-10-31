@@ -70,7 +70,7 @@ function Tag({ tag }) {
             </div>
             <div className={styles.tag__about}>
               <h1 className={styles.tag__about_title}>{tag.replace("-", " ")}</h1>
-              <p>A JavaScript runtime built on Chrome's V8 JavaScript engine.</p>
+              <p>A JavaScript runtime built on Chrome V8 JavaScript engine.</p>
             </div>
           </div>
 
