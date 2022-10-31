@@ -3,8 +3,11 @@ import Image from "next/image";
 import React from "react";
 import AppContainer from "../../components/AppContainer";
 import BlogItem from "../../components/BlogItem";
+import ContributersIcons from "../../components/ContributersIcons";
+import Rating from "../../components/Rating";
 
 import styles from "../../styles/Tag.module.css"
+import { formatNumber } from "../../utils/helper_functions";
 
 
 const blogs = [
@@ -46,7 +49,25 @@ const blogs = [
   },
 ];
 
+const contributers = [
+  "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+  "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+  "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+  "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+  "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+  "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+  "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+  "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+  "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+]
+
 function Tag({ tag }) {
+
+  const [tagStatsVisible, setTagStatsVisible] = React.useState(false)
+
+  const onStatToggle = () => {
+    setTagStatsVisible(prev => !prev)
+  }
 
   return (
     <React.Fragment>
@@ -54,7 +75,27 @@ function Tag({ tag }) {
         <title>{tag.replace("-", " ")}</title>
       </Head>
       <div className={styles.tag__wrapper}>
-        <div className={styles.tag__left}>
+        <div onClick={onStatToggle} className={`${styles.tag__left_toggler} ${tagStatsVisible ? styles.active : ''}`}></div>
+        <div className={`${styles.tag__left} ${tagStatsVisible ? styles.active : ''}`}>
+          <div className={styles.tag__post_count}>
+            <span>total posts</span>
+            <p>{formatNumber(5022)}</p>
+            <span>total comments</span>
+            <p>{formatNumber(10022)}</p>
+          </div>
+          <div className={styles.tag__top_contributer}>
+            <h2>Top Contributers</h2>
+            <div className={styles.tag__contributers}>
+              <ContributersIcons contributers={contributers} />
+            </div>
+          </div>
+          <div className={styles.tag__rating__container}>
+            <h2>Ratings</h2>
+            <div className={styles.tag__rating}>
+              <p>{formatNumber(4000)}</p>
+              <Rating value={4} readOnly={true} />
+            </div>
+          </div>
 
         </div>
         <div className={styles.tag__right}>

@@ -2,6 +2,7 @@
     padding: 2rem 4rem;
     display: flex;
     align-items: flex-start;
+    position: relative;
 }
 
 .tag__left {
@@ -11,6 +12,48 @@
     background-color: var(--gray);
     margin-right: 1rem;
     border-radius: .5rem;
+    position: sticky;
+    top: 7rem;
+    padding: 1rem;
+}
+
+.tag__post_count p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.tag__post_count p span {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.tag__post_count p:first-child {
+    margin-bottom: .5rem;
+}
+
+.tag__top_contributer,
+.tag__rating__container {
+    margin-top: 1rem;
+}
+
+.tag__top_contributer .tag__contributers {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tag__rating {
+    display: flex;
+    align-items: center;
+    margin-top: .5rem;
+}
+
+.tag__rating p:first-child {
+    font-size: 1.4rem;
+    margin-right: .5rem;
+    font-weight: 600;
 }
 
 .tag__right {
@@ -27,6 +70,7 @@
     border-radius: .5rem;
     display: flex;
     align-items: flex-start;
+    position: relative;
 }
 
 .tag__icon {
@@ -56,9 +100,36 @@
         padding: 1rem;
     }
 
+    .tag__left_toggler {
+        position: absolute;
+        left: -.5rem;
+        top: 1rem;
+        width: 1.2rem;
+        height: 7rem;
+        background-color: var(--primary-color);
+        border-radius: .5rem;
+        cursor: pointer;
+    }
+
     .tag__left {
-        display: none;
+        opacity: 0;
         visibility: hidden;
+        left: -100%;
+        position: absolute;
+        z-index: 99;
+        top: 1rem;
+        max-width: 93%;
+        transition: all .4s ease;
+    }
+
+    .tag__left.active {
+        opacity: 1;
+        visibility: visible;
+        left: 1rem;
+    }
+
+    .tag__left_toggler.active {
+        background-color: var(--secondary-color);
     }
 
     .tag__posts {
@@ -73,8 +144,16 @@
         font-size: 1.3rem;
     }
 
+    .tag__wrapper h2 {
+        font-size: 1.3rem;
+    }
+
     .tag__posts {
         grid-template-columns: 100%;
+    }
+
+    .tag__post_count p {
+        font-size: 2rem;
     }
 
 }

@@ -1,0 +1,28 @@
+.contributers__wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    padding: 0 1rem;
+}
+
+.contributer__image {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 25px;
+    z-index: var(--index);
+    margin-left: -1rem;
+    border: 2px solid;
+    border-left-color: var(--white);
+    border-right-color: var(--white);
+    border-top-color: var(--secondary-color);
+    border-bottom-color: var(--green);
+    margin-bottom: .5rem;
+    transition: all .4s ease;
+}
+
+.contributer__image:hover {
+    opacity: .8;
+    transform: scale(1.1);
+}

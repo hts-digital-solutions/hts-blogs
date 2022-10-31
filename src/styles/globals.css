@@ -19,6 +19,7 @@ body {
   --lightgray: rgb(255, 255, 255);
   --title-size: 3rem;
   --subtitle-size: 1.2rem;
+  --danger: red;
 }
 
 body {
