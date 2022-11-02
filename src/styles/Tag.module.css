@@ -8,12 +8,12 @@
 .tag__left {
     max-width: 300px;
     width: 100%;
-    height: calc(100vh - 9rem);
+    height: calc(100vh - 8rem);
     background-color: var(--gray);
     margin-right: 1rem;
     border-radius: .5rem;
     position: sticky;
-    top: 7rem;
+    top: 6rem;
     padding: 1rem;
 }
 
@@ -94,7 +94,7 @@
     gap: 1rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 868px) {
 
     .tag__wrapper {
         padding: 1rem;

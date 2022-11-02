@@ -59,7 +59,7 @@
   color: var(--gray);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 868px) {
   .blogitem__info {
     padding: 2rem 1rem;
   }
@@ -70,9 +70,11 @@
     flex-direction: column;
     align-items: flex-start;
   }
+
   .blogitem__author_info div:last-child {
     margin-top: 0.2rem;
   }
+
   .blogitem__author_info div p:first-child {
     margin: 0;
     padding: 0;

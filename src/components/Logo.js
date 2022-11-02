@@ -15,7 +15,7 @@ function Logo() {
             height={70}
             width={80}
             alt="logo__hts"
-            // layout="responsive"
+            className={styles.logo}
             objectFit="contain"
           />
         </a>

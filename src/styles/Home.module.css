@@ -68,7 +68,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 868px) {
   .home__container {
     flex-direction: column-reverse;
     padding: 1rem;

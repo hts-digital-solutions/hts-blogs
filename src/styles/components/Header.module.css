@@ -62,7 +62,7 @@ header css
   opacity: .9;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 868px) {
   .header__wrapper {
     padding: 0 1rem;
   }

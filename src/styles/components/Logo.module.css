@@ -9,9 +9,14 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 868px) {
   .logo__wrapper {
     width: max-content;
+  }
+
+  .logo {
+    border-top-right-radius: 1.5rem;
+    border-top-left-radius: 1.5rem;
   }
 }
 
