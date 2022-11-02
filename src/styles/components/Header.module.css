@@ -4,7 +4,7 @@ header css
 
 .header__wrapper {
   background-color: var(--secondary-color);
-  padding: 1rem 4rem;
+  padding: 0rem 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -17,7 +17,6 @@ header css
 }
 
 .header__wrapper__left {
-  margin-right: 1rem;
   transition: all 0.4s linear;
 }
 
@@ -65,7 +64,7 @@ header css
 
 @media screen and (max-width: 768px) {
   .header__wrapper {
-    padding: 1rem;
+    padding: 0 1rem;
   }
 
   .header__wrapper__right {
