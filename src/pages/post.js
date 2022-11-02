@@ -6,6 +6,7 @@ import Button from "../components/Button";
 import InputTagger from "../components/InputTagger";
 const HtmlEditor = dynamic(() => import("../components/HtmlEditor"), {
   ssr: false,
+  loading: () => <EditorLoader />
 });
 import { useDispatch } from "react-redux"
 
@@ -13,6 +14,7 @@ import styles from "../styles/Post.module.css";
 import { setAlertInfo } from "../store/slices/EnvironmentSlice";
 import Popup from "../components/Popup";
 import TopicSelector from "../components/TopicSelector";
+import EditorLoader from "../components/EditorLoader";
 
 const initialState = {
   title: "",

@@ -65,7 +65,7 @@
 }
 
 .blog__author p:last-child {
-  color: var(--secondary-color);
+  color: var(--primary-color);
   font-weight: 600;
 }
 
@@ -89,6 +89,7 @@
     width: 120px;
     height: 120px;
   }
+
   .blog__author {
     flex-direction: column;
     align-items: flex-start;

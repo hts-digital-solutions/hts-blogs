@@ -22,7 +22,7 @@
 }
 
 .blogitem__author_info div p:last-child {
-  color: var(--secondary-color);
+  color: var(--primary-color);
   margin-left: 0.5rem;
 }
 
