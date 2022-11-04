@@ -33,13 +33,16 @@ export function formatNumber(number) {
 }
 
 export function notify(data, router) {
-  const notification = new Notification('Notification', {
-    ...data,
-    vibrate: [300, 100, 400],
-    silent: false
-  });
+  navigator.serviceWorker.ready.then(function (registration) {
+    registration.showNotification('Notification', {
+      ...data,
+      vibrate: [300, 100, 400],
+      silent: false
+    });
 
-  notification.addEventListener('click', function () {
-    data?.url && router.push(data?.url)
-  })
+    // self.addEventListener('click', function () {
+    //   data?.url && router.push(data?.url)
+    // })
+
+  });
 }

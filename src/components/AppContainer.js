@@ -13,6 +13,9 @@ const Header = dynamic(() => import("./Header"), {
 });
 
 const showNotification = (dispatch, notification, router) => {
+  navigator.serviceWorker.register('sw.js', {
+    scope: '/',
+  });
   if (!("Notification" in window)) {
     dispatch(setAlertInfo({
       data: {
