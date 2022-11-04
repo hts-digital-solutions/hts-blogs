@@ -31,3 +31,15 @@ export function getCookie(cname, cookies) {
 export function formatNumber(number) {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
+
+export function notify(data, router) {
+  const notification = new Notification('Notification', {
+    ...data,
+    vibrate: [300, 100, 400],
+    silent: false
+  });
+
+  notification.addEventListener('click', function () {
+    data?.url && router.push(data?.url)
+  })
+}

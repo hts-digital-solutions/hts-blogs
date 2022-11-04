@@ -1,6 +1,19 @@
 .logo__wrapper {
   transition: all 0.4s ease-in-out;
   display: block;
+  padding: .5rem;
+}
+
+.logo__wrapper a {
+  display: flex;
+  align-items: flex-end;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.logo__text {
+  margin-left: .2rem;
+  font-size: 1.8rem;
 }
 
 @media screen and (max-width: 1024px) {
