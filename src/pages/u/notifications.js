@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import AppContainer from '../../components/AppContainer'
 
-import styles from "../../styles/u/Notification.module.css"
+import styles from "../../styles/u/Common.module.css"
 import { _config } from '../../utils/helper_functions'
 
 const initailNotifications = [
@@ -122,10 +122,10 @@ function Notifications() {
             <Head>
                 <title>Notifications | {_config("website-name")}</title>
             </Head>
-            <div className={styles.notification__wrapper}>
+            <div className={styles.container__wrapper}>
                 <h1>Notifications</h1>
-                <div className={styles.notification__container}>
-                    <div className={styles.notification__filter}>
+                <div className={styles.container__container}>
+                    <div className={styles.container__filter}>
                         <button onClick={handleFilter} data-filter='all' className={filter === 'all' ? styles.active : ''}>All <span>{notifications.length}</span></button>
                         <button onClick={handleFilter} data-filter='unread' className={filter === 'unread' ? styles.active : ''}>Unread <span>32</span></button>
                         <button onClick={handleFilter} data-filter='read' className={filter === 'read' ? styles.active : ''}>Read <span>50</span></button>
@@ -133,7 +133,7 @@ function Notifications() {
                         <button onClick={handleFilter} data-filter='comments' className={filter === 'comments' ? styles.active : ''}>Comments <span>10</span></button>
                         <button onClick={handleFilter} data-filter='topics' className={filter === 'topics' ? styles.active : ''}>Topics <span>2</span></button>
                     </div>
-                    <div className={styles.notification__list}>
+                    <div className={styles.container__list}>
                         <RenderNotifications notifications={filteredNotifications} />
                     </div>
                 </div>
@@ -144,20 +144,20 @@ function Notifications() {
 
 const RenderNotifications = ({ notifications }) => {
     return (
-        <div className={styles.notification__list_wrapper}>
+        <div className={styles.container__list_wrapper}>
             {
                 notifications.length > 0
                     ?
                     notifications.map((notification, index) => (
-                        <div className={`${styles.notification__item} ${notification?.read === 0 ? styles.unread : ''}`} key={index}>
-                            <div className={styles.notification__item_title} dangerouslySetInnerHTML={{ __html: notification?.title }} />
-                            <p className={styles.notification__time}>2 days ago</p>
+                        <div className={`${styles.container__item} ${notification?.read === 0 ? styles.unread : ''}`} key={index}>
+                            <div className={styles.container__item_title} dangerouslySetInnerHTML={{ __html: notification?.title }} />
+                            <p className={styles.container__time}>2 days ago</p>
                             {notification?.info && (
-                                <div className={styles.notification__item_post_ref}>
+                                <div className={styles.container__item_post_ref}>
                                     <Link href="/">
-                                        <a className={styles.notification__item_post}>
+                                        <a className={styles.container__item_post}>
                                             <h2 className='truncate-2'>{notification?.info?.title}</h2>
-                                            <div className={styles.notification__item_post_img}>
+                                            <div className={styles.container__item_post_img}>
                                                 <Image
                                                     src={notification?.info?.image}
                                                     alt={notification?.info?.slug}
@@ -181,9 +181,9 @@ const RenderNotifications = ({ notifications }) => {
 
 const NotificationLoader = () => {
     return (
-        <div className={styles.notification__loader}>
+        <div className={styles.container__loader}>
             {
-                Array(10).fill(0).map((_, index) => <div className={styles.notification__item} key={index}></div>)
+                Array(10).fill(0).map((_, index) => <div className={styles.container__item} key={index}></div>)
             }
         </div>
     )

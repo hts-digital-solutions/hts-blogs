@@ -1,24 +1,24 @@
-.notification__wrapper {
+.container__wrapper {
     padding: 2rem 4rem;
 }
 
-.notification__wrapper h1 {
+.container__wrapper h1 {
     position: sticky;
     top: 6.2rem;
 }
 
-.notification__container {
+.container__container {
     display: flex;
     align-items: flex-start;
     margin-top: 1rem;
 }
 
-.notification__list {
+.container__list {
     flex: 1;
     width: 100%;
 }
 
-.notification__filter {
+.container__filter {
     background-color: var(--gray);
     padding: 1rem;
     border-radius: .5rem;
@@ -33,7 +33,7 @@
 }
 
 
-.notification__filter button {
+.container__filter button {
     width: 100%;
     border: none;
     background-color: var(--secondary-color);
@@ -49,61 +49,64 @@
     transition: all .4s ease;
 }
 
-.notification__filter button:hover {
+.container__filter button:hover {
     opacity: .8;
 }
 
-.notification__filter button.active {
+.container__filter button.active {
     background-color: var(--primary-color);
 }
 
-.notification__filter button span {
+.container__filter button span {
     font-size: .8rem;
     color: var(--white);
     padding: .2rem;
     font-weight: 600;
 }
 
-.notification__list_wrapper {
+.container__list_wrapper {
     padding: 0 1rem;
     width: 100%;
     border-radius: .5rem;
 }
 
-.notification__item {
+.container__item {
     padding: 1rem;
     border-radius: .5rem;
     background-color: var(--gray);
     margin-bottom: .5rem;
 }
 
-.notification__item.unread {
+.container__item.unread {
     background-color: var(--light);
 }
 
-.notification__loader .notification__item {
-    padding: 1rem;
+.container__loader .container__item {
+    padding: 1.15rem;
     animation: loading 2s infinite;
     transition: all 1s linear;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.notification__item_title {
+.container__item_title {
     padding: .5rem 0;
     font-size: 1.5rem;
 }
 
-.notification__time {
+.container__time {
     font-size: .9rem;
     margin-bottom: .5rem;
 }
 
-.notification__item_post_ref {
+.container__item_post_ref {
     display: block;
     margin-top: 1rem;
 }
 
 
-.notification__item_post {
+.container__item_post {
     text-decoration: none;
     padding: 1rem;
     display: flex;
@@ -115,17 +118,17 @@
     position: relative;
 }
 
-.notification__item_post:hover {
+.container__item_post:hover {
     opacity: .8;
 }
 
 
-.notification__item_post h2 {
+.container__item_post h2 {
     max-width: calc(100vmin - 50vmin);
     width: 100%;
 }
 
-.notification__item_post_img {
+.container__item_post_img {
     margin-left: 1rem;
     border-radius: .5rem;
     overflow: hidden;
@@ -133,13 +136,67 @@
     width: 100px;
 }
 
+.container__item_img,
+.container__loader .container__item_content,
+.container__item_action {
+    padding: 1rem;
+    background-color: var(--light);
+    border-radius: .5rem;
+}
+
+.container__item_content {
+    flex: 1;
+    margin: 0 1rem;
+}
+
+.container__post {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container__post .container__item_img {
+    width: 5rem;
+    height: 5rem;
+    padding: 0;
+    overflow: hidden;
+}
+
+.container__post .container__item_content a {
+    margin-bottom: .2rem;
+    text-decoration: none;
+    color: var(--black);
+}
+
+.container__post .container__item_content p:last-child {
+    margin-top: .5rem;
+    color: var(--primary-color);
+}
+
+.container__post .container__item_content p:last-child span:first-child {
+    margin-right: .5rem;
+}
+
+.container__post .container__item_content p:last-child span:nth-child(2) {
+    background: var(--secondary-color);
+    padding: 0 .5rem;
+    color: var(--white);
+    border-radius: .2rem;
+    font-size: .9rem;
+}
+
+.container__post .container__item_action {
+    padding: .2rem;
+    background: transparent;
+}
+
 @media screen and (max-width: 868px) {
-    .notification__wrapper {
+    .container__wrapper {
         padding: 1rem;
         padding-bottom: 6rem;
     }
 
-    .notification__wrapper h1 {
+    .container__wrapper h1 {
         position: fixed;
         width: 100%;
         top: 6rem;
@@ -150,12 +207,12 @@
         margin-top: -2rem;
     }
 
-    .notification__container {
+    .container__container {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .notification__filter {
+    .container__filter {
         max-width: 100%;
         height: max-content;
         overflow-x: auto;
@@ -167,42 +224,50 @@
         margin-bottom: 2rem;
     }
 
-    .notification__filter button {
+    .container__filter button {
         padding: .3rem 1rem;
         margin: 0 .5rem;
         font-size: 1rem;
     }
 
-    .notification__filter button span {
+    .container__filter button span {
         font-size: .8rem;
     }
 
-    .notification__list_wrapper {
+    .container__list_wrapper {
         padding: 0;
+    }
+
+    .container__post {
+        flex-direction: column;
+    }
+
+    .container__post .container__item_content {
+        margin: .5rem 0;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .notification__wrapper h1 {
+    .container__wrapper h1 {
         font-size: 1.3rem;
     }
 
-    .notification__filter button span {
+    .container__filter button span {
         font-size: .8rem;
         margin-left: .5rem;
     }
 
 
-    .notification__item_post h2 {
+    .container__item_post h2 {
         font-size: 1.15rem;
     }
 
-    .notification__item_title {
+    .container__item_title {
         font-size: 1.1rem;
     }
 
 
-    .notification__item_post_img {
+    .container__item_post_img {
         width: 50px;
         height: 50px;
     }
