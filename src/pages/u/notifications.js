@@ -12,7 +12,18 @@ const initailNotifications = [
         title: '<p><b>Sanjiv</b> has commented on <b>My First Post</b></p>',
         info: null,
         type: 'comments',
-        read: 0,
+        read: 1,
+        timestamp: 1943437463463
+    },
+    {
+        title: '<p><b>Sanjiv</b> has commented on <b>My First Post</b></p>',
+        info: {
+            title: 'Why India is leaving his remarks everywhere in this world?',
+            slug: 'my-first-post',
+            image: "https://images.unsplash.com/photo-1444676632488-26a136c45b9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aG91c2UlMjBrZWVwdGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+        },
+        type: 'comments',
+        read: 1,
         timestamp: 1943437463463
     },
     {
@@ -34,7 +45,7 @@ const initailNotifications = [
             image: "https://images.unsplash.com/photo-1444676632488-26a136c45b9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aG91c2UlMjBrZWVwdGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
         },
         type: 'comments',
-        read: 0,
+        read: 1,
         timestamp: 1943437463463
     },
     {
@@ -45,18 +56,7 @@ const initailNotifications = [
             image: "https://images.unsplash.com/photo-1444676632488-26a136c45b9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aG91c2UlMjBrZWVwdGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
         },
         type: 'comments',
-        read: 0,
-        timestamp: 1943437463463
-    },
-    {
-        title: '<p><b>Sanjiv</b> has commented on <b>My First Post</b></p>',
-        info: {
-            title: 'Why India is leaving his remarks everywhere in this world?',
-            slug: 'my-first-post',
-            image: "https://images.unsplash.com/photo-1444676632488-26a136c45b9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aG91c2UlMjBrZWVwdGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-        },
-        type: 'comments',
-        read: 0,
+        read: 1,
         timestamp: 1943437463463
     },
     {
@@ -149,7 +149,7 @@ const RenderNotifications = ({ notifications }) => {
                 notifications.length > 0
                     ?
                     notifications.map((notification, index) => (
-                        <div className={styles.notification__item} key={index}>
+                        <div className={`${styles.notification__item} ${notification?.read === 0 ? styles.unread : ''}`} key={index}>
                             <div className={styles.notification__item_title} dangerouslySetInnerHTML={{ __html: notification?.title }} />
                             <p className={styles.notification__time}>2 days ago</p>
                             {notification?.info && (

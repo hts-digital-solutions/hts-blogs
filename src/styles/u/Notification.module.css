@@ -77,6 +77,10 @@
     margin-bottom: .5rem;
 }
 
+.notification__item.unread {
+    background-color: var(--light);
+}
+
 .notification__loader .notification__item {
     padding: 1rem;
     animation: loading 2s infinite;
@@ -159,7 +163,7 @@
         flex-direction: row;
         padding: .5rem;
         top: 7.5rem;
-        z-index: 999;
+        z-index: 99;
         margin-bottom: 2rem;
     }
 

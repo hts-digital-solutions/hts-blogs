@@ -12,6 +12,7 @@
     align-items: flex-start;
     padding: 1rem;
     transition: all .2s ease;
+    z-index: 999;
 }
 
 .sidebar__container.active {
@@ -56,6 +57,9 @@
     align-items: center;
     justify-content: center;
     border: none;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
 }
 
 .sidebar__close:hover {
@@ -72,7 +76,7 @@
 
 .sidebar__notification {
     position: absolute;
-    right: 1rem;
+    left: 1rem;
     top: 1rem;
     font-size: 2rem;
     color: var(--white);

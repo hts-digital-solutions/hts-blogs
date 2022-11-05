@@ -17,6 +17,7 @@ body {
   --black: #000;
   --gray: #eee;
   --lightgray: rgb(255, 255, 255);
+  --light: rgb(250, 250, 250);
   --title-size: 3rem;
   --subtitle-size: 1.2rem;
   --danger: red;
@@ -24,7 +25,7 @@ body {
 
 
 .font-swash {
-  font-family: 'Berkshire Swash', cursive;
+  font-family: 'Berkshire Swash', cursive !important;
 }
 
 body {
@@ -38,18 +39,18 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: var(--gray);
+  background: var(--light);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--secondary-color);
+  background: var(--gray);
   border-radius: 0.5rem;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--secondary-color);
+  background: var(--gray);
 }
 
 .truncate {
