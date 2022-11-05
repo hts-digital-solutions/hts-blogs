@@ -2,6 +2,11 @@
     padding: 2rem 4rem;
 }
 
+.notification__wrapper h1 {
+    position: sticky;
+    top: 6.2rem;
+}
+
 .notification__container {
     display: flex;
     align-items: flex-start;
@@ -23,6 +28,8 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    position: sticky;
+    top: 9.5rem;
 }
 
 
@@ -59,10 +66,8 @@
 
 .notification__list_wrapper {
     padding: 0 1rem;
-    height: calc(100vh - 12rem);
     width: 100%;
     border-radius: .5rem;
-    overflow-y: auto;
 }
 
 .notification__item {
@@ -93,6 +98,7 @@
     margin-top: 1rem;
 }
 
+
 .notification__item_post {
     text-decoration: none;
     padding: 1rem;
@@ -105,8 +111,13 @@
     position: relative;
 }
 
+.notification__item_post:hover {
+    opacity: .8;
+}
+
+
 .notification__item_post h2 {
-    max-width: calc(500px - 120px);
+    max-width: calc(100vmin - 50vmin);
     width: 100%;
 }
 
@@ -121,6 +132,18 @@
 @media screen and (max-width: 868px) {
     .notification__wrapper {
         padding: 1rem;
+        padding-bottom: 6rem;
+    }
+
+    .notification__wrapper h1 {
+        position: fixed;
+        width: 100%;
+        top: 6rem;
+        left: 1rem;
+        background-color: var(--white);
+        padding: 1rem 0;
+        z-index: 99;
+        margin-top: -2rem;
     }
 
     .notification__container {
@@ -135,6 +158,9 @@
         margin-bottom: .5rem;
         flex-direction: row;
         padding: .5rem;
+        top: 7.5rem;
+        z-index: 999;
+        margin-bottom: 2rem;
     }
 
     .notification__filter button {
@@ -164,13 +190,17 @@
 
 
     .notification__item_post h2 {
-        max-width: calc(300px - 120px);
-        width: 100%;
-        font-size: 1.2rem;
+        font-size: 1.15rem;
     }
 
     .notification__item_title {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+    }
+
+
+    .notification__item_post_img {
+        width: 50px;
+        height: 50px;
     }
 }
 

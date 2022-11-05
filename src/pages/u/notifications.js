@@ -10,6 +10,68 @@ import { _config } from '../../utils/helper_functions'
 const initailNotifications = [
     {
         title: '<p><b>Sanjiv</b> has commented on <b>My First Post</b></p>',
+        info: null,
+        type: 'comments',
+        read: 0,
+        timestamp: 1943437463463
+    },
+    {
+        title: '<p><b>Sanjiv</b> has commented on <b>My First Post</b></p>',
+        info: {
+            title: 'Why India is leaving his remarks everywhere in this world?',
+            slug: 'my-first-post',
+            image: "https://images.unsplash.com/photo-1444676632488-26a136c45b9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aG91c2UlMjBrZWVwdGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+        },
+        type: 'comments',
+        read: 0,
+        timestamp: 1943437463463
+    },
+    {
+        title: '<p><b>Sanjiv</b> has commented on <b>My First Post</b></p>',
+        info: {
+            title: 'Why India is leaving his remarks everywhere in this world?',
+            slug: 'my-first-post',
+            image: "https://images.unsplash.com/photo-1444676632488-26a136c45b9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aG91c2UlMjBrZWVwdGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+        },
+        type: 'comments',
+        read: 0,
+        timestamp: 1943437463463
+    },
+    {
+        title: '<p><b>Sanjiv</b> has commented on <b>My First Post</b></p>',
+        info: {
+            title: 'Why India is leaving his remarks everywhere in this world?',
+            slug: 'my-first-post',
+            image: "https://images.unsplash.com/photo-1444676632488-26a136c45b9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aG91c2UlMjBrZWVwdGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+        },
+        type: 'comments',
+        read: 0,
+        timestamp: 1943437463463
+    },
+    {
+        title: '<p><b>Sanjiv</b> has commented on <b>My First Post</b></p>',
+        info: {
+            title: 'Why India is leaving his remarks everywhere in this world?',
+            slug: 'my-first-post',
+            image: "https://images.unsplash.com/photo-1444676632488-26a136c45b9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aG91c2UlMjBrZWVwdGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+        },
+        type: 'comments',
+        read: 0,
+        timestamp: 1943437463463
+    },
+    {
+        title: '<p><b>Sanjiv</b> has commented on <b>My First Post</b></p>',
+        info: {
+            title: 'Why India is leaving his remarks everywhere in this world?',
+            slug: 'my-first-post',
+            image: "https://images.unsplash.com/photo-1444676632488-26a136c45b9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aG91c2UlMjBrZWVwdGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+        },
+        type: 'comments',
+        read: 0,
+        timestamp: 1943437463463
+    },
+    {
+        title: '<p><b>Sanjiv</b> has commented on <b>My First Post</b></p>',
         info: {
             title: 'Why India is leaving his remarks everywhere in this world?',
             slug: 'my-first-post',
@@ -90,23 +152,25 @@ const RenderNotifications = ({ notifications }) => {
                         <div className={styles.notification__item} key={index}>
                             <div className={styles.notification__item_title} dangerouslySetInnerHTML={{ __html: notification?.title }} />
                             <p className={styles.notification__time}>2 days ago</p>
-                            <div className={styles.notification__item_post_ref}>
-                                <Link href="/">
-                                    <a className={styles.notification__item_post}>
-                                        <h2 className='truncate-2'>{notification?.info?.title}</h2>
-                                        <div className={styles.notification__item_post_img}>
-                                            <Image
-                                                src={notification?.info?.image}
-                                                alt={notification?.info?.slug}
-                                                layout="responsive"
-                                                width="100%"
-                                                height="100%"
-                                                objectFit="contain"
-                                            />
-                                        </div>
-                                    </a>
-                                </Link>
-                            </div>
+                            {notification?.info && (
+                                <div className={styles.notification__item_post_ref}>
+                                    <Link href="/">
+                                        <a className={styles.notification__item_post}>
+                                            <h2 className='truncate-2'>{notification?.info?.title}</h2>
+                                            <div className={styles.notification__item_post_img}>
+                                                <Image
+                                                    src={notification?.info?.image}
+                                                    alt={notification?.info?.slug}
+                                                    layout="responsive"
+                                                    width="100%"
+                                                    height="100%"
+                                                    objectFit="contain"
+                                                />
+                                            </div>
+                                        </a>
+                                    </Link>
+                                </div>
+                            )}
                         </div>
                     ))
                     : <NotificationLoader />
