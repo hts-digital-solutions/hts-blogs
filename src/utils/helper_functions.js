@@ -36,13 +36,17 @@ export function notify(data, router) {
   navigator.serviceWorker.ready.then(function (registration) {
     registration.showNotification('Notification', {
       ...data,
-      vibrate: [300, 100, 400],
-      silent: false
+      vibrate: [200, 100, 200, 100, 200, 100, 200],
+      silent: false,
+      tag: 'htsds-blogs',
     });
 
-    // self.addEventListener('click', function () {
-    //   data?.url && router.push(data?.url)
-    // })
-
+    registration.getNotifications({
+      tag: 'htsds-blogs'
+    }).then(notifications => {
+      notifications[0].onclick = function () {
+        router.push(notifications[0]?.data)
+      }
+    })
   });
 }

@@ -42,8 +42,8 @@
   margin-bottom: 0.5rem;
 }
 
-.blog__author h4 {
-  font-weight: 400;
+.blog__author a {
+  font-weight: 500;
   font-size: 0.9rem;
 }
 

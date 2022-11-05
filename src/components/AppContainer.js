@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setAlertInfo } from "../store/slices/EnvironmentSlice";
-import { notify } from "../utils/helper_functions";
+import { notify, _config } from "../utils/helper_functions";
 import Alert from "./Alert";
 import Footer from "./Footer";
 
@@ -13,9 +13,8 @@ const Header = dynamic(() => import("./Header"), {
 });
 
 const showNotification = (dispatch, notification, router) => {
-  navigator.serviceWorker.register('sw.js', {
-    scope: '/',
-  });
+  const url = process.env.NODE_ENV === 'development' ? _config('baseUrlDev') : _config('baseUrl')
+  navigator.serviceWorker.register(url + '/sw.js');
   if (!("Notification" in window)) {
     dispatch(setAlertInfo({
       data: {
@@ -44,10 +43,10 @@ export default function AppContainer({ children }) {
     const notification = {
       body: 'Juhi has liked your post. Please check your post for more details.',
       icon: '/hts-logo-small-t.png',
-      url: '/u/notifications'
+      data: '/u/notifications'
     }
 
-    notification && showNotification(dispatch, notification, router)
+    // notification && showNotification(dispatch, notification, router)
   }, [])
 
   return (

@@ -1,4 +1,5 @@
 {
-    "website-name" : "HTSDS Blogs",
-    "baseUrl" : "https://blogs.htsdigitalsolutions.com"
+    "website-name": "HTSDS Blogs",
+    "baseUrl": "https://blogs.htsdigitalsolutions.com",
+    "baseUrlDev": "http://localhost:3000"
 }

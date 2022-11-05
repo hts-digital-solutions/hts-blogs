@@ -25,7 +25,7 @@ export default function BlogItem({ blog }) {
         <div className={styles.blogitem__author_info}>
           <div>
             <Image
-              src="/assets/profile.jpeg"
+              src="/assets/profile.png"
               width={22}
               height={22}
               alt='blogitem'

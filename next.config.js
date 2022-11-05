@@ -8,7 +8,7 @@ const nextConfig = withPWA({
   pwa: {
     dest: "public",
     register: true,
-    skipWaiting: true
+    skipWaiting: true,
   },
   images: {
     domains: ["images.unsplash.com", "source.unsplash.com"],

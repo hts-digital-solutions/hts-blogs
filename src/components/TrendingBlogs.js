@@ -27,7 +27,7 @@ export default function TrendingBlogs({ trendingBlogs }) {
             <div className={styles.blog__author}>
               <div className={styles.author__title}>
                 <Image
-                  src="/assets/profile.jpeg"
+                  src="/assets/profile.png"
                   width={22}
                   height={22}
                   alt='profile'
@@ -36,7 +36,7 @@ export default function TrendingBlogs({ trendingBlogs }) {
                 />
                 <Link href="/">
                   <a>
-                    <h4>Tridev Sharma</h4>
+                    Tridev Sharma
                   </a>
                 </Link>
               </div>
