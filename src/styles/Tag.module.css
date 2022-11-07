@@ -18,7 +18,6 @@
 }
 
 .tag__post_count p {
-    font-family: 'Courier New', Courier, monospace;
     font-size: 3rem;
     font-weight: 600;
     color: var(--primary-color);

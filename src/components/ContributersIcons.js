@@ -9,7 +9,7 @@ function ContributersIcons({ contributers }) {
         <div className={styles.contributers__wrapper}>
             {contributers.map((contributer, index) => (
                 <Link href={'/'} key={index}>
-                    <a className={styles.contributer__image} key={index} style={{ '--index': index + 1 }}>
+                    <a className={styles.contributer__image} key={index} style={{ '--index': contributers.length - index }}>
                         <Image
                             src={contributer}
                             alt={'alt-' + index}

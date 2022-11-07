@@ -39,7 +39,7 @@
 .blogitem__info {
   position: absolute;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.95);
   padding: 1rem 0.5rem;
   width: 100%;
 }
@@ -61,7 +61,7 @@
 
 @media screen and (max-width: 868px) {
   .blogitem__info {
-    padding: 2rem 1rem;
+    padding: 1rem;
   }
 }
 

@@ -13,13 +13,9 @@
     border-radius: 25px;
     z-index: var(--index);
     margin-left: -1rem;
-    border: 2px solid;
-    border-left-color: var(--white);
-    border-right-color: var(--white);
-    border-top-color: var(--secondary-color);
-    border-bottom-color: var(--green);
     margin-bottom: .5rem;
     transition: all .4s ease;
+    border: 2px solid var(--gray);
 }
 
 .contributer__image:hover {
