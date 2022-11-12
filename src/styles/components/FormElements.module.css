@@ -1,0 +1,51 @@
+.profile__input {
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
+
+.profile__input:last-child {
+    margin-right: 0;
+}
+
+.profile__input label {
+    margin-bottom: .5rem;
+    color: #555;
+    display: inline-block;
+}
+
+.profile__input input,
+.profile__input textarea,
+.profile__input select {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--gray);
+    outline: none;
+    background: var(--lightgray);
+    border-radius: 0.5rem;
+    resize: vertical;
+    transition: all .4s ease;
+}
+
+
+.profile__input input:disabled,
+.profile__input textarea:disabled,
+.profile__input select:disabled {
+    background: var(--gray);
+    padding: .2rem 0;
+    font-size: 1.2rem;
+    color: var(--black);
+    font-weight: 600;
+}
+
+
+@media screen and (max-width: 868px) {
+    .profile__input:last-child {
+        margin-right: 0rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .profile__input {
+        margin-right: 0rem;
+    }
+}
