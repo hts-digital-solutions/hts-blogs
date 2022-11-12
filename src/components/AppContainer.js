@@ -54,7 +54,9 @@ export default function AppContainer({ children }) {
       {/* header */}
       <Header />
 
-      {children}
+      <main>
+        {children}
+      </main>
 
       {/* footer */}
       <Footer />

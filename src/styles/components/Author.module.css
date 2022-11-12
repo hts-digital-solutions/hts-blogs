@@ -1,0 +1,138 @@
+.author__wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: var(--light);
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+}
+
+
+.author__info {
+    display: flex;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.author__image {
+    width: 150px;
+    height: 150px;
+    border-radius: .5rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    overflow: hidden;
+}
+
+.author__details {
+    padding: 1rem 2rem;
+    flex: 1;
+}
+
+.author__social {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 250px;
+}
+
+.author__work {
+    font-weight: 600;
+    margin: .2rem 0;
+}
+
+.author__bio {
+    color: #555;
+    margin-top: .5rem;
+}
+
+.author__posts_stat {
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+    color: var(--secondary-color);
+    animation: color 1s ease infinite;
+}
+
+.author__links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.author__link {
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--secondary-color);
+    border-radius: 2rem;
+    margin: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    cursor: pointer;
+    transition: all .4s ease;
+}
+
+.author__link:hover {
+    opacity: .8;
+}
+
+
+@keyframes color {
+    0% {
+        color: var(--secondary-color);
+    }
+
+    50% {
+        color: var(--primary-color);
+    }
+
+    100% {
+        color: var(--secondary-color);
+    }
+}
+
+@media screen and (max-width:667px) {
+    .author__wrapper {
+        flex-direction: column;
+    }
+
+    .author__social {
+        flex-direction: row;
+        max-width: 100%;
+        width: 100%;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+}
+
+
+@media screen and (max-width:458px) {
+    .author__info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .author__image {
+        border-top-right-radius: .5rem;
+        border-bottom-right-radius: .5rem;
+        margin-top: .5rem;
+    }
+
+    .author__details {
+        text-align: center;
+    }
+
+    .author__details h2,
+    .author__posts_stat {
+        font-size: 1.3rem;
+    }
+
+    .author__work {
+        font-size: .95rem;
+    }
+
+    .author__link {
+        margin: .1rem .2rem;
+    }
+}

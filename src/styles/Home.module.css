@@ -53,6 +53,17 @@
   gap: 1rem;
 }
 
+.authors__container {
+  padding: 2rem 4rem 4rem 0;
+}
+
+
+@media screen and (max-width:667px) {
+  .authors__container {
+    padding: 2rem 0rem 4rem 0;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .home__most_used_tags {
     max-width: 200px;
@@ -107,4 +118,9 @@
   .home__main.story_page {
     margin-top: 0rem;
   }
+
+  .authors__container {
+    padding-right: 0rem;
+  }
+
 }

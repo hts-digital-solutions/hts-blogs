@@ -5,10 +5,15 @@ header css
 .header__wrapper {
   background-color: var(--secondary-color);
   padding: 0rem 4rem;
+  z-index: 999;
+}
+
+.header__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 999;
+  max-width: 1378px;
+  margin: 0 auto;
 }
 
 .header__sticky {

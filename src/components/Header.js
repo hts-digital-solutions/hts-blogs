@@ -23,44 +23,46 @@ export default function Header() {
 
   return (
     <header className={`${styles.header__wrapper} ${styles.header__sticky}`}>
-      {navigator.userAgent.includes("Mobile") && router.pathname !== "/" && (
-        <div className={styles.header__back} onClick={() => router.back()}>
-          <i className="la la-arrow-left"></i>
+      <div className={styles.header__container}>
+        {navigator.userAgent.includes("Mobile") && router.pathname !== "/" && (
+          <div className={styles.header__back} onClick={() => router.back()}>
+            <i className="la la-arrow-left"></i>
+          </div>
+        )}
+        <div className={styles.header__wrapper__left}>
+          <Logo />
         </div>
-      )}
-      <div className={styles.header__wrapper__left}>
-        <Logo />
-      </div>
-      <div className={styles.header__wrapper__right}>
-        <Navigation />
+        <div className={styles.header__wrapper__right}>
+          <Navigation />
 
-        <div className={styles.header__buttons}>
-          {auth.isLoggedIn ? (
-            <button className={styles.header__user} onClick={onProfileClick}>
-              <Image
-                src={auth.user.image}
-                alt=""
-                width={48}
-                height={48}
-                objectFit="contain"
-              />
-            </button>
-          ) : (
-            <>
-              <Button title="Login" theme="light" link="/login" icon="la la-user" />
-              <Button
-                title="Signup"
-                theme="primary"
-                link="/signup"
-                icon="la la-user-plus"
-              />
-            </>
-          )}
+          <div className={styles.header__buttons}>
+            {auth.isLoggedIn ? (
+              <button className={styles.header__user} onClick={onProfileClick}>
+                <Image
+                  src={auth.user.image}
+                  alt=""
+                  width={48}
+                  height={48}
+                  objectFit="contain"
+                />
+              </button>
+            ) : (
+              <>
+                <Button title="Login" theme="light" link="/login" icon="la la-user" />
+                <Button
+                  title="Signup"
+                  theme="primary"
+                  link="/signup"
+                  icon="la la-user-plus"
+                />
+              </>
+            )}
 
+          </div>
         </div>
-      </div>
 
-      {auth.isLoggedIn && <SideNavbar />}
+        {auth.isLoggedIn && <SideNavbar />}
+      </div>
     </header>
   );
 }
