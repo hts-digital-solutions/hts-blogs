@@ -1,5 +1,6 @@
 export const topAuthors = [
     {
+        id: 1,
         name: 'Tridev Sharma',
         work: 'SDE@LaysanTechnologies',
         total_posts: '21k',
@@ -7,6 +8,7 @@ export const topAuthors = [
         bio: 'I am a SDE at Laysan Technologies Pvt Ltd. If writing hundreds of lines of complicated code sounds more appealing than writing a short paragraph about yourself, join the club. Writing a succinct bio that encapsulates who you are and what you’ve accomplished is tricky. '
     },
     {
+        id: 2,
         name: 'Sanjiv Kumar Pandit',
         work: 'SDE@Innobuzz',
         total_posts: '1k',

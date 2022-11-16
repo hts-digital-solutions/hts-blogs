@@ -1,10 +1,42 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { getFollowing } from '../store/slices/AuthSlice'
+import { setAlertInfo } from '../store/slices/EnvironmentSlice'
 
 import styles from "../styles/components/Author.module.css"
 import Button from './Button'
 
 function Author({ author }) {
+
+    const iFollows = useSelector(getFollowing)
+    const dispatch = useDispatch()
+    const [following, setFollowing] = useState(false)
+
+    const onClickFollow = () => {
+        dispatch(setAlertInfo({
+            data: {
+                type: "processing",
+            }
+        }));
+
+        setTimeout(() => {
+            dispatch(setAlertInfo({
+                data: {
+                    type: "success",
+                    icon: 'la la-check',
+                    message: following ? 'You followed him successfully.' : 'You unfollwed him.'
+                }
+            }));
+
+            setFollowing(prev => !prev)
+        }, 1000)
+    }
+
+    useEffect(() => {
+        setFollowing(iFollows.indexOf(author?.id) !== -1)
+    }, [])
+
     return (
         <div className={styles.author__wrapper}>
             <div className={styles.author__info}>
@@ -25,7 +57,7 @@ function Author({ author }) {
             </div>
             <div className={styles.author__social}>
                 <p className={styles.author__posts_stat}>{author?.total_posts} <small>posts</small></p>
-                <Button title='Follow' />
+                <Button title={following ? 'Following' : 'Follow'} onClick={onClickFollow} theme={!following ? 'primary' : 'secondary'} />
                 <div className={styles.author__links}>
                     <div className={styles.author__link}>
                         <i className='la la-linkedin'></i>

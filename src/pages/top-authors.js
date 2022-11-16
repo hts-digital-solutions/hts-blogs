@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useState } from "react";
 import AppContainer from "../components/AppContainer";
 import Author from "../components/Author";
 import DiscoverTags from "../components/DiscoverTags";
@@ -9,6 +10,7 @@ import { _config } from "../utils/helper_functions";
 
 
 function TopAuthors() {
+
   return (
     <>
       <Head>
