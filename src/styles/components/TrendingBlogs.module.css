@@ -99,6 +99,16 @@
     margin-left: 0;
   }
 
+  .blog__info {
+    padding-right: 0;
+  }
+
+  .blog__read {
+    justify-content: space-between;
+    width: 100%;
+    margin-top: .2rem;
+  }
+
   .blog__info p:last-child {
     font-size: 0.9rem;
   }

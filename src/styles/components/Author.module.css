@@ -21,11 +21,17 @@
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     overflow: hidden;
+    background-color: var(--gray);
 }
 
 .author__details {
     padding: 1rem 2rem;
     flex: 1;
+}
+
+.author__details a {
+    text-decoration: none;
+    color: var(--black);
 }
 
 .author__social {
@@ -71,6 +77,10 @@
     color: var(--white);
     cursor: pointer;
     transition: all .4s ease;
+}
+
+.author__link:first-child {
+    margin-left: -.7rem;
 }
 
 .author__link:hover {

@@ -3,11 +3,11 @@ import React from "react";
 
 import styles from "../styles/components/AboutAuthor.module.css";
 
-export default function AboutAuthor({ author }) {
+export default function AboutAuthor({ author, details = false }) {
   return (
-    <div className={styles.about_author__container}>
+    <div className={`${styles.about_author__container} ${details ? styles.about_author__details : ''}`}>
       <Image
-        src={author?.image || ""}
+        src={author?.image || "/assets/hts-logo-w.png"}
         alt={author?.name}
         width={120}
         height={120}

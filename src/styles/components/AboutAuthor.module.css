@@ -4,8 +4,19 @@
   align-items: flex-start;
 }
 
+.about_author__details {
+  flex-direction: column;
+  align-items: center;
+}
+
 .about_author__info {
   margin-left: 1rem;
+  flex: 1;
+}
+
+.about_author__details .about_author__info {
+  text-align: center;
+  margin-top: .5rem;
 }
 
 .about_author__image {
@@ -22,6 +33,10 @@
   display: flex;
   align-items: center;
   margin-top: 0.5rem;
+}
+
+.about_author__details .author__social {
+  justify-content: center;
 }
 
 .author__social i {
