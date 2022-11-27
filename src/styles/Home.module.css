@@ -57,8 +57,12 @@
   padding: 2rem 4rem 4rem 0;
 }
 
+.story_page .home__blogs {
+  padding-right: 3rem;
+  border: 0;
+}
 
-@media screen and (max-width:667px) {
+@media screen and (max-width: 667px) {
   .authors__container {
     padding: 2rem 0rem 4rem 0;
   }
@@ -89,7 +93,6 @@
     margin-top: 2rem;
   }
 
-
   .home__most_used_tags {
     max-width: 100%;
   }
@@ -105,10 +108,13 @@
 }
 
 @media screen and (max-width: 480px) {
-
   .home__trending_blogs h2,
   .story_page h1 {
     font-size: 1.3rem;
+  }
+
+  .home__container {
+    padding-bottom: 4rem;
   }
 
   .home__most_used_tags.story_page {
@@ -123,4 +129,7 @@
     padding-right: 0rem;
   }
 
+  .story_page .home__blogs {
+    padding-right: 0rem;
+  }
 }

@@ -1,0 +1,51 @@
+.top_topics__container {
+  margin-top: 2rem;
+  padding-right: 2rem;
+}
+
+/**topic css**/
+
+.topic__container {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: var(--gray);
+  height: 8rem;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.topic__cover {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+}
+
+.topic__info {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+  color: var(--white);
+}
+
+.topic__container:hover {
+  opacity: 0.5;
+}
+
+/***blogs***/
+
+.blogs {
+  padding-right: 3rem;
+  margin-top: 2rem;
+  border-top: 0;
+}
+
+@media screen and (max-width: 480px) {
+  .top_topics__container,
+  .blogs {
+    padding-right: 0;
+  }
+  
+}

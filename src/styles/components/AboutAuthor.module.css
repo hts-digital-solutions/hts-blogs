@@ -53,6 +53,12 @@
   transition: all 0.4s ease;
 }
 
+.about_author__details .author__social i {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.2rem;
+}
+
 .author__social i:hover {
   background-color: var(--lightgray);
 }

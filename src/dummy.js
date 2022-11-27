@@ -57,3 +57,40 @@ export const blogs = [
     },
   ];
   
+  export const topTopics = [
+    {
+      id: 1,
+      title: "Development",
+      description: "Learn something about development edge with new technologies.",
+      cover_image: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      slug: "development"
+    },
+    {
+      id: 1,
+      title: "Indian Culture",
+      description: "Learn something about Indian Culture edge with new technologies.",
+      cover_image: "https://images.unsplash.com/photo-1585607344893-43a4bd91169a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      slug: "indian-culture"
+    },
+    {
+      id: 1,
+      title: "Web3",
+      description: "Learn something about web3 edge with new technologies.",
+      cover_image: "https://images.unsplash.com/photo-1667039596246-bf29b5c4b300?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80",
+      slug: "web3"
+    },
+    {
+      id: 1,
+      title: "Global Politics",
+      description: "Learn something about global politics edge with new technologies.",
+      cover_image: "https://images.unsplash.com/photo-1569163139500-66446e2926ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      slug: "global-politics"
+    },
+    {
+      id: 1,
+      title: "English Connection",
+      description: "Learn something about english connection edge with new technologies.",
+      cover_image: "https://images.unsplash.com/photo-1565084895732-c379ab5c6294?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=930&q=80",
+      slug: "english-connection"
+    }
+  ]

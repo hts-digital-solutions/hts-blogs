@@ -79,10 +79,6 @@
     transition: all .4s ease;
 }
 
-.author__link:first-child {
-    margin-left: -.7rem;
-}
-
 .author__link:hover {
     opacity: .8;
 }

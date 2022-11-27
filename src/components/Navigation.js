@@ -11,14 +11,14 @@ function Navigation() {
     <nav className={styles.navigation__wrapper}>
       <ul className={styles.navigation__menu}>
         <li>
-          <Link href="/our-story">
+          <Link href="/">
             <a
-              className={router.pathname === "/our-story" ? styles.active : ""}
+              className={router.pathname === "/" ? styles.active : ""}
             >
               <span className={styles.navigation__menu__icon}>
-                <i className="la la-podcast"></i>
+                <i className="la la-home"></i>
               </span>
-              Our Story
+              Home
             </a>
           </Link>
         </li>
